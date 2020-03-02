@@ -14,10 +14,12 @@ class SessionForm extends React.Component{
 
     handleSubmit(e){
         e.preventDefault();
-        this.props.submitForm(this.state);
+        this.props.submitForm(this.state)
+        .then(() => this.props.history.push("/"))
     }
 
     render(){
+
         const email = (this.props.formType === 'Sign Up') ?
             <label>Email:
                 <input 
