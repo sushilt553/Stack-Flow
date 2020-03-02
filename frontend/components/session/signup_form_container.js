@@ -4,7 +4,8 @@ import { createUser } from '../../actions/session_actions';
 
 const mapStateToProps = state => {
     return {
-        formType: 'Sign Up'
+        formType: 'Sign Up',
+        errors: state.errors.user
     }
 }
 

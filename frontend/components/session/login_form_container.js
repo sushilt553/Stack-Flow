@@ -4,7 +4,8 @@ import { loginUser } from '../../actions/session_actions';
 
 const mapStateToProps = state => {
     return {
-        formType: 'Log In'
+        formType: 'Log In',
+        errors: state.errors.session
     }
 }
 

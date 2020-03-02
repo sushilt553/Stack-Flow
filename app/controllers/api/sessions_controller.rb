@@ -10,7 +10,7 @@ class Api::SessionsController < ApplicationController
             log_in(@user)
             render :show
         else
-            render json: ["Username/Password didn't match"]
+            render json: ["Username/Password didn't match"], status: 422
         end
     end
 

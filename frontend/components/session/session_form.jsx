@@ -29,6 +29,8 @@ class SessionForm extends React.Component{
                 />
             </label>
             : null;
+   
+        const errors = this.props.errors.map((error) => <li>{error}</li>)
 
         const link = (this.props.formType === 'Sign Up') ?
             <Link to={`/login`} >Login</Link>
@@ -56,6 +58,9 @@ class SessionForm extends React.Component{
                     {email}
                     <input type="submit" value={this.props.formType}/>
                 </form>
+                <ul>
+                    {errors}
+                </ul>
                 {link}
             </div>
         )
