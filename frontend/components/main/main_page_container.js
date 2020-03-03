@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import MainPage from './main_page';
-import { logoutUser, loginUser } from '../../actions/session_actions';
+import { logoutUser } from '../../actions/session_actions';
 
 const mapStateToProps = state => {
     const id = state.session.id

@@ -3,9 +3,11 @@ import SessionForm from './session_form';
 import { loginUser } from '../../actions/session_actions';
 
 const mapStateToProps = state => {
+    const errors = state.errors.session;
+    state.errors.session = []; //Is this the correct way to do it?
     return {
         formType: 'Log In',
-        errors: state.errors.session
+        errors: errors
     }
 }
 

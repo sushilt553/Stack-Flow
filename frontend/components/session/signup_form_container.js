@@ -3,9 +3,11 @@ import SessionForm from './session_form';
 import { createUser } from '../../actions/session_actions';
 
 const mapStateToProps = state => {
+    const errors = state.errors.user;
+    state.errors.user = []; //Is this a correct way to do it?
     return {
         formType: 'Sign Up',
-        errors: state.errors.user
+        errors: errors
     }
 }
 

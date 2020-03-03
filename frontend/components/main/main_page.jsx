@@ -6,21 +6,26 @@ class MainPage extends React.Component {
     render() {
 
         const main = !this.props.user ? (
-            <div>
-                <h1>Stack Flow</h1>
-                <Link to="/signup">Sign Up</Link>
-                <br />
-                <Link to="/login">Log In</Link>
-            </div>
-        ) : (
-                <div>
-                    <h1>Welcome to Stack Flow: {this.props.user.username}</h1>
-                    <button onClick={this.props.logout}>Logout</button>
+            <>
+                <div class='nav-page'>
+                    <img src={window.logo} />
+                    <h3>Stack Flow</h3>
                 </div>
+                <div class='sign-page'>
+                    <Link to="/signup" class="link">Sign Up</Link>
+                    <Link to="/login" class="link">Log In</Link>
+                </div>
+            </>
+        ) : (
+                <>
+                    <img src={window.logo} />
+                    <h3>Stack Flow: {this.props.user.username}</h3>
+                    <button onClick={this.props.logout}>Logout</button>
+                </>
             )
 
         return (
-            <div>
+            <div class="main-page">
                 {main}
             </div>
         )

@@ -31,6 +31,7 @@ class SessionForm extends React.Component{
             : null;
    
         const errors = this.props.errors.map((error) => <li>{error}</li>)
+    
         const demoUser = { username: 'guest', password: 'hunter12' };
 
         const link = (this.props.formType === 'Sign Up') ?
