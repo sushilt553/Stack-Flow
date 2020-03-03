@@ -8,6 +8,6 @@
 
 User.destroy_all
 
-User.create!(username: 'sushil1', email: 'sushil1@sushil.com', password: 'hunter12')
+User.create!(username: 'guest', email: 'sushil1@sushil.com', password: 'hunter12')
 User.create!(username: 'sushil2', email: 'sushil2@sushil.com', password: 'hunter13')
 User.create!(username: 'sushil3', email: 'sushil3@sushil.com', password: 'hunter14')
