@@ -11,7 +11,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        submitForm: (user) => dispatch(loginUser(user))
+        submitForm: (user) => dispatch(loginUser(user)),
+        login: (user) => dispatch(loginUser(user))
     }
 }
 

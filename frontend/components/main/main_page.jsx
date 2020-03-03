@@ -4,13 +4,10 @@ import { Link } from 'react-router-dom';
 class MainPage extends React.Component {
 
     render() {
-        const demoUser = { username: 'guest', password: 'hunter12' }
 
         const main = !this.props.user ? (
             <div>
                 <h1>Stack Flow</h1>
-                <button onClick={() => this.props.login(demoUser)}>Demo Login</button>
-                <br />
                 <Link to="/signup">Sign Up</Link>
                 <br />
                 <Link to="/login">Log In</Link>

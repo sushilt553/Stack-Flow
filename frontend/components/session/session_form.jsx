@@ -31,11 +31,15 @@ class SessionForm extends React.Component{
             : null;
    
         const errors = this.props.errors.map((error) => <li>{error}</li>)
+        const demoUser = { username: 'guest', password: 'hunter12' };
 
         const link = (this.props.formType === 'Sign Up') ?
             <Link to={`/login`} >Login</Link>
             :
-            <Link to={`/signup`} >Signup</Link>;
+            <> 
+                <button onClick={() => this.props.login(demoUser)}>Demo Login</button>
+                <Link to={`/signup`} >Signup</Link>
+            </>
 
         return (
             <div>
