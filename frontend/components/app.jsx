@@ -7,11 +7,14 @@ import GreetingContainer from '../components/greeting/greeting_container';
 
 const App = () => {
     return (
+        <div>
+            <Route exact path={'/'} component={GreetingContainer} />
         <Switch>
-            <AuthRoute path={`/signup`} component={SignupFormContainer} />
-            <AuthRoute path={`/login`} component={LoginFormContainer} />
-            <Route path={`/`} component={GreetingContainer} />
+            <AuthRoute exact path={`/signup`} component={SignupFormContainer} />
+            <AuthRoute exact path={`/login`} component={LoginFormContainer} />
+            {/* <ProtectedRoute exact path={`/`} component={GreetingContainer} /> */}
         </Switch>
+        </div>
     )
 }
 
