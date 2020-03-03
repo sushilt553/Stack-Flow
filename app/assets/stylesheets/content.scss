@@ -45,6 +45,10 @@
     border-radius: 4px;
 }
 
+.form-page>input[type='submit']:hover {
+    background-color: #0077cc;
+}
+
 .demo-signup {
     display: flex;
     flex-direction: column;
@@ -61,6 +65,10 @@
     background-color: #0196ff;
     border-radius: 4px;
     margin-bottom: 12px;
+}
+
+.demo-login:hover {
+    background-color: #0077cc;
 }
 
 .sign-up-link {

@@ -1,6 +1,5 @@
 import React from 'react';
 import {Link, NavLink} from 'react-router-dom';
-import MainPage from '../main/main_page';
 
 class SessionForm extends React.Component{
     constructor(props){
@@ -55,7 +54,6 @@ class SessionForm extends React.Component{
 
         return (
             <>
-                <MainPage />
                 <div className='form'>
                     <h2 className='form-type'>{this.props.formType}</h2>
                     <form class='form-page' onSubmit={this.handleSubmit}>
