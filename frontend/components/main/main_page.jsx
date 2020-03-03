@@ -18,8 +18,10 @@ class MainPage extends React.Component {
             </>
         ) : (
                 <>
+                <div class='nav-page'>
                     <img src={window.logo} />
                     <h3>Stack Flow: {this.props.user.username}</h3>
+                </div>
                     <button onClick={this.props.logout}>Logout</button>
                 </>
             )
