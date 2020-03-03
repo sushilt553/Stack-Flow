@@ -1,5 +1,6 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import {Link, NavLink} from 'react-router-dom';
+import MainPage from '../main/main_page';
 
 class SessionForm extends React.Component{
     constructor(props){
@@ -10,6 +11,10 @@ class SessionForm extends React.Component{
 
     update(field){
         return (e) => this.setState({[field]: e.target.value});
+    }
+
+    componentWillUnmount(){
+        this.props.clearErrors();
     }
 
     handleSubmit(e){
@@ -30,44 +35,55 @@ class SessionForm extends React.Component{
             </label>
             : null;
    
-        const errors = this.props.errors.map((error) => <li>{error}</li>)
+        const errors = this.props.errors.map((error) => 
+            <li className='login-error'>{error}</li>)
     
         const demoUser = { username: 'guest', password: 'hunter12' };
 
         const link = (this.props.formType === 'Sign Up') ?
-            <Link to={`/login`} >Login</Link>
+            <div className='login-link'>
+                Already have an account? <Link to={`/login`} ><span>Login</span></Link>
+            </div>
             :
-            <> 
-                <button onClick={() => this.props.login(demoUser)}>Demo Login</button>
-                <Link to={`/signup`} >Signup</Link>
-            </>
+            <div className='demo-signup'> 
+                <button className='demo-login' onClick={() => 
+                    this.props.login(demoUser)}>Demo Login</button>
+                <div className='sign-up-link'>
+                    Don't have an account? <Link to={`/signup`} ><span>Signup</span></Link>
+                </div>
+            </div>
 
         return (
-            <div>
-                <h2>{this.props.formType}</h2>
-                <form onSubmit={this.handleSubmit}>
-                    <label>Username:
-                        <input 
-                        type="text" 
-                        value={this.state.username}
-                        onChange={this.update('username')}
-                        />
-                    </label>
-                    <label>Password:
-                        <input 
-                        type="password" 
-                        value={this.state.password}
-                        onChange={this.update('password')}
-                        />
-                    </label>
-                    {email}
-                    <input type="submit" value={this.props.formType}/>
-                </form>
-                <ul>
-                    {errors}
-                </ul>
+            <>
+                <MainPage />
+                <div className='form'>
+                    <h2 className='form-type'>{this.props.formType}</h2>
+                    <form class='form-page' onSubmit={this.handleSubmit}>
+                        <label>Username:
+                            <br/>
+                            <input 
+                            type="text" 
+                            value={this.state.username}
+                            onChange={this.update('username')}
+                            />
+                        </label>
+                        <label>Password:
+                            <br/>
+                            <input 
+                            type="password" 
+                            value={this.state.password}
+                            onChange={this.update('password')}
+                            />
+                        </label>
+                        {email}
+                        <input type="submit" value={this.props.formType}/>
+                    </form>
+                    <ul className='login-errors'>
+                        {errors}
+                    </ul>
                 {link}
-            </div>
+                </div>
+            </>
         )
     }
 }

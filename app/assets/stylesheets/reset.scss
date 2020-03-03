@@ -56,7 +56,23 @@
 //     -webkit-appearance: none;
 //     -moz-appearance: none;
 // }
-// button,
-// input[type="submit"] {
-//     cursor: pointer;
-// }
+header,
+nav,
+img,
+h3,
+a,
+body {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    text-decoration: none;
+    font: inherit;
+    color: inherit;
+    text-align: inherit;
+}
+
+button,
+input[type="submit"] {
+    cursor: pointer;
+}
