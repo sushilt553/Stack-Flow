@@ -22,7 +22,7 @@ class NavBar extends React.Component {
 
                 <nav className='search-bar'>
                     <img src={window.glass}/>
-                    <input type="text" placeholder="     Search..."/>
+                    <input type="text" placeholder="Search..."/>
                 </nav>
 
                 <ul className='sign-page'>
@@ -52,7 +52,7 @@ class NavBar extends React.Component {
 
                     <nav className='search-bar'>
                         <img src={window.glass} />
-                        <input type="text" placeholder="     Search..." />
+                        <input type="text" placeholder="Search..." />
                     </nav>
 
                     <ul>
