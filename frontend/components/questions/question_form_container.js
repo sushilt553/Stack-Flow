@@ -5,13 +5,13 @@ import { postQuestion } from '../../actions/stack_actions';
 const mapStateToProps = state => {
     return {
         question: { title: '', body: '', tag: '' },
-        formType: 'Post Question'
+        formType: 'Post question'
     }
 }
 
 const mapDispatchToProps = dispatch => {
     return {
-        postQuestion: (question) => dispatch(postQuestion(question))
+        submitQuestion: (question) => dispatch(postQuestion(question))
     }
 }
 
