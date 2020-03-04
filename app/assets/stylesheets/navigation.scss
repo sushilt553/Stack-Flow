@@ -60,3 +60,15 @@ li>.logout:hover {
     border-radius: 10px;
     color: #0c0d0e;
 }
+
+.search-bar {
+    position: relative;
+}
+
+.search-bar>img {
+    width: 14px;
+    height: 14px;
+    position: absolute;
+    left: 8px;
+    top: 10px;
+}
