@@ -1,13 +1,62 @@
 import React from 'react';
+import ReactQuill from 'react-quill';
+import { toolbarOptions } from '../../util/quill_toolbar_options';
 
 class QuestionForm extends React.Component {
     constructor(props){
         super(props);
         this.state = this.props.question;
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     update(field){
         return (e) => this.setState({[field]: e.target.value})
+    }
+
+    handleSubmit(e){
+        e.preventDefault;
+        this.props.submitQuestion(this.state)
+        .then(() => this.props.history.push('/home'))
+    }
+
+    render(){
+        return(
+            <div>
+                <h2>{this.props.formType}</h2>
+                <form onSubmit={this.handleSubmit}>
+                    <label>Title 
+                        <p>Be specific and imagine you're asking a question to another person</p>
+                        <input 
+                            type="text"
+                            value={this.state.title}
+                            onChange={this.update('title')}
+                            placeholder="e.g. Is there an R function for finding the index of an element in a vector?"
+                            />
+                    </label>
+
+                    <label>Body
+                        <p>Include all the information someone would need to answer your question</p>
+                        <ReactQuill 
+                            modules={{toolbar: toolbarOptions}}
+                            value={this.state.body}
+                            OnChange={this.update('body')}
+                        />
+                    </label>
+
+                    <label>Tags
+                        <p>Add up to 5 tags to describe what your question is about</p>
+                        <input
+                            type="text"
+                            value={this.state.tags}
+                            onChange={this.update('tags')}
+                            placeholder='e.g.(ruby rails jquery'
+                            />
+                    </label>
+
+                    <input type="submit" value={this.props.formType}/>
+                </form>
+            </div>
+        )
     }
 }
 
