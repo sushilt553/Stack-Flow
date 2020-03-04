@@ -1,7 +1,15 @@
 .splash {
-    position: relative;
-    margin: auto;
-    width: 1000px;
+    display: flex;
+    justify-content: center;
+}
+
+.splash {
+    background: image-url('splash-page.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.splash>img {
+    min-height: 900px;
 }
 
 .splash-content {
@@ -9,16 +17,9 @@
     flex-direction: column;
     align-items: center;
     position: absolute;
-    left: 350px;
-    top: 100px;
-    width: 300px;
+    top: 250px;
+    width: 320px;
     color: white;
-}
-
-.splash>img {
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
 }
 
 .splash-h-p {
@@ -32,6 +33,10 @@
 
 .splash-paragraph {
     font-size: 15px;
+}
+
+.btns {
+    display: flex;
 }
 
 .btn-1,

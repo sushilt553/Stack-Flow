@@ -1,6 +1,7 @@
 li>.log-link {
     margin: 2px;
     padding: .6em;
+    font-size: 14px;
     background-color: #e2ecf4;
     color: #39739e;
     border-color: #7aa8c7;
@@ -11,6 +12,7 @@ li>.log-link {
 li>.sign-link {
     padding: .6em;
     background-color: #0196ff;
+    font-size: 14px;
     color: #ffffff;
     border-color: #73c0ff;
     border-radius: 3px;
@@ -20,6 +22,7 @@ li>.sign-link {
 li>.logout {
     margin: 2px;
     padding: .6em;
+    font-size: 14px;
     background-color: #e2ecf4;
     color: #39739e;
     border-color: #7aa8c7;
@@ -43,11 +46,11 @@ li>.logout:hover {
 
 .search-bar>input {
     padding: 8px;
-    width: 500px;
+    width: 40rem;
 }
 
 .products>button {
-    margin: 5px;
+    margin: 10px;
     padding: 7px;
     border: transparent;
 }
