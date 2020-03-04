@@ -24,3 +24,28 @@ export const removeQuestion = (questionId) => {
         questionId
     }
 }
+
+export const requestAllQuestions = () => dispatch => (
+    StackAPIUtil.fetchAllQuestions()
+    .then(questions => dispatch(receiveAllQuestions(questions)))
+)
+
+export const requestQuestion = questionId => dispatch => (
+    StackAPIUtil.fetchQuestion(questionId)
+    .then(question => dispatch(receiveQuestion(question)))
+)
+
+export const postQuestion = question => dispatch => (
+    StackAPIUtil.postQuestion(question)
+    .then(question => dispatch(receiveQuestion(question)))
+)
+
+export const updateQuestion = question => dispatch => (
+    StackAPIUtil.updateQuestion(question)
+    .then(question => dispatch(receiveQuestion(question)))
+)
+
+export const deleteQuestion = questionId => dispatch => (
+    StackAPIUtil.deleteQuestion(questionId)
+    .then(() => dispatch(removeQuestion(questionId)))
+)
