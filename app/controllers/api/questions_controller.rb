@@ -6,13 +6,21 @@ class Api::QuestionsController < ApplicationController
     end
 
     def show
-        @question = Question.find(params[:id])
-        render :show
+        @question = Question.find_by(id: params[:id])
+        if @question
+            render :show
+        else
+            render json: ['Question not found'], status: 404
+        end
     end
 
     def edit
-        @question = Question.find(params[:id])
-        render json :show
+        @question = Question.find_by(id: params[:id])
+        if @question
+            render :show
+        else
+            render json: ['Question not found'], status: 404
+        end
     end
 
     def update
@@ -36,12 +44,12 @@ class Api::QuestionsController < ApplicationController
     end
 
     def destroy
-        @question = current_user.questions.find_by(question_id: params[:id])
+        @question = Question.find_by(id: params[:id])
 
         if @question
             @question.destroy
         else
-            render json: ['Author can only delete this question']
+            render json: ['Author can only delete this question'], status: 422
         end
     end
 

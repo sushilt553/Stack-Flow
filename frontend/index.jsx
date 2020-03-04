@@ -2,6 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
+//test only
+// import {requestAllQuestions, requestQuestion, deleteQuestion, updateQuestion} from './actions/stack_actions';
+
+// window.questions = requestAllQuestions;
+// window.question = requestQuestion;
+// window.delete = deleteQuestion;
+// window.update = updateQuestion;
 
 document.addEventListener('DOMContentLoaded', () => {
     const root = document.getElementById('root');
