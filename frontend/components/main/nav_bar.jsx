@@ -8,12 +8,20 @@ class NavBar extends React.Component {
         const main = !this.props.user ? (
             <header className='header'>
                 <nav className='header-nav'>
-                    <Link class='links' to={`/`} >
+                    <Link className='links' to={`/`} >
                         <h3 className="header-logo">
                             <img className='img-logo' src={window.logo} />
                             <div>stack<strong>flow</strong></div>
                         </h3>
                     </Link>
+                </nav>
+                <div className='products'>
+                    <button>Products</button>
+                    <button>Customers</button>
+                </div>
+
+                <nav className='search-bar'>
+                    <input type="text" placeholder="Search..."/>
                 </nav>
 
                 <ul className='sign-page'>
@@ -35,6 +43,11 @@ class NavBar extends React.Component {
                             </h3>
                         </Link>
                     </nav>
+
+                    <nav className='search-bar'>
+                        <input type="text" placeholder="Search..." />
+                    </nav>
+
                     <ul>
                         <li><button className='logout' onClick={this.props.logout}>
                             Logout

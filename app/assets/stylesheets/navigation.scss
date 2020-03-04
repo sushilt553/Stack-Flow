@@ -40,3 +40,20 @@ li>.logout:hover {
 .sign-link:hover {
     background-color: #0077cc;
 }
+
+.search-bar>input {
+    padding: 8px;
+    width: 500px;
+}
+
+.products>button {
+    margin: 5px;
+    padding: 7px;
+    border: transparent;
+}
+
+.products>button:hover {
+    background-color: #e4e6e8;
+    border-radius: 10px;
+    color: #0c0d0e;
+}

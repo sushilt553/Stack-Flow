@@ -19,7 +19,7 @@ class SessionForm extends React.Component{
     handleSubmit(e){
         e.preventDefault();
         this.props.submitForm(this.state)
-        .then(() => this.props.history.push("/"))
+        // .then(() => this.props.history.push("/home"))
     }
 
     render(){
@@ -56,7 +56,7 @@ class SessionForm extends React.Component{
             <>
                 <div className='form'>
                     <h2 className='form-type'>{this.props.formType}</h2>
-                    <form class='form-page' onSubmit={this.handleSubmit}>
+                    <form className='form-page' onSubmit={this.handleSubmit}>
                         <label>Username:
                             <br/>
                             <input 

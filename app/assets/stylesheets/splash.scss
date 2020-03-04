@@ -1,0 +1,55 @@
+.splash {
+    position: relative;
+    margin: auto;
+    width: 1000px;
+}
+
+.splash-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    left: 350px;
+    top: 100px;
+    width: 300px;
+    color: white;
+}
+
+.splash>img {
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.splash-h-p {
+    text-align: center;
+    border: 1px solid black;
+    font-size: 20px;
+    background-color: lightyellow;
+    border-radius: 7px;
+    color: #f48024;
+}
+
+.splash-paragraph {
+    font-size: 15px;
+}
+
+.btn-1,
+.btn-2 {
+    margin: 5px;
+    padding: 10px;
+    border-radius: 3px;
+    font-size: large;
+}
+
+.btn-1 {
+    background-color: #ffffff;
+    color: #f48024;
+    border: 1px solid #f48024;
+}
+
+.btn-2 {
+    background-color: #f48024;
+    color: #ffffff;
+    border: 1px solid #ffffff;
+}
