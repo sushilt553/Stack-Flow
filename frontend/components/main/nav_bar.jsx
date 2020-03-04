@@ -43,6 +43,11 @@ class NavBar extends React.Component {
                             </h3>
                         </Link>
                     </nav>
+                    
+                    <div className='products'>
+                        <button>Products</button>
+                        <button>Customers</button>
+                    </div>
 
                     <nav className='search-bar'>
                         <input type="text" placeholder="Search..." />
