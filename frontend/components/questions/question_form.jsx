@@ -7,10 +7,19 @@ class QuestionForm extends React.Component {
         super(props);
         this.state = this.props.question;
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.updateQuill = this.updateQuill.bind(this);
     }
 
     update(field){
-        return (e) => this.setState({[field]: e.target.value})
+        return (e) => this.setState({[field]: e.currentTarget.value})
+    }
+
+    updateQuill(value) {
+        this.setState({body: value})
+    }
+
+    componentWillUnmount(){
+        this.props.clearQuestionErrors();
     }
 
     handleSubmit(e){
@@ -20,6 +29,8 @@ class QuestionForm extends React.Component {
     }
 
     render(){
+        const errors = this.props.errors.map((error, index) => <li key={index}>{error}</li>)
+        
         return(
             <div>
                 <h2>{this.props.formType}</h2>
@@ -39,7 +50,7 @@ class QuestionForm extends React.Component {
                         <ReactQuill 
                             modules={{toolbar: toolbarOptions}}
                             value={this.state.body}
-                            OnChange={this.update('body')}
+                            onChange={this.updateQuill}
                         />
                     </label>
 
@@ -55,6 +66,9 @@ class QuestionForm extends React.Component {
 
                     <input type="submit" value={this.props.formType}/>
                 </form>
+                <ul>
+                    {errors}
+                </ul>
             </div>
         )
     }

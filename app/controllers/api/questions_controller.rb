@@ -24,14 +24,17 @@ class Api::QuestionsController < ApplicationController
     end
 
     def update
-        tag= Tag.find_by(name: params[:question][:tag_name]) || 
-            Tag.create!(name: params[:question][:tag_name])
-
-        @question = Question.new(question_params.except(:tag_name))
-        
-        @question.tag_id = tag.id
+        @question = current_user.questions.find_by(id: params[:id])
 
         if @question.update_attributes(question_params)
+            old_tags = @question.taggings
+
+            Question.destroy_tags(old_tags)
+
+            tags_arr = params[:question][:tags].split(" ")
+
+            Question.create_tags(tags_arr, @question)
+            
             render :show
         else
             render json: @question.errors.full_messages, status: 422
@@ -39,14 +42,12 @@ class Api::QuestionsController < ApplicationController
     end
 
     def create
-        tag= Tag.find_by(name: params[:question][:tag_name]) || 
-            Tag.create!(name: params[:question][:tag_name])
 
-        @question = Question.new(question_params.except(:tag_name))
-        
-        @question.tag_id = tag.id
+        @question = current_user.questions.new(question_params)
 
         if @question.save
+            tags_arr = params[:question][:tags].split(" ")
+            Question.create_tags(tags_arr, @question)
             render :show
         else
             render json: @question.errors.full_messages, status: 422
@@ -65,6 +66,6 @@ class Api::QuestionsController < ApplicationController
 
     private
     def question_params
-        params.require(:question).permit(:title, :body, :tag_name, :author_id)
+        params.require(:question).permit(:title, :body)
     end
 end

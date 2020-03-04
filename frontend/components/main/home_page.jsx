@@ -1,11 +1,13 @@
 import React from 'react';
-import QuestionForm from '../questions/question_form';
+import QuestionFormContainer from '../questions/question_form_container';
 
 class HomePage extends React.Component{
 
     render(){
         return (
-            <QuestionForm />
+            <div>
+                <QuestionFormContainer />
+            </div>
         )
     }
 }

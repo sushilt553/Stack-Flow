@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 
     resources :questions
 
+    resources :tags, only: [:index]
+
     resources :users, only: [:create]
 
     resource :session, only: [:create, :destroy]

@@ -5,7 +5,6 @@
 #  id         :bigint           not null, primary key
 #  title      :string           not null
 #  body       :text             not null
-#  tag_id     :integer          not null
 #  author_id  :integer          not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
@@ -19,8 +18,24 @@ class Question < ApplicationRecord
         foreign_key: :author_id,
         class_name: :User
 
-    belongs_to :tag,
+    has_many :taggings,
         primary_key: :id,
-        foreign_key: :tag_id,
-        class_name: :Tag
+        foreign_key: :question_id,
+        class_name: :Tagging
+
+    has_many :tags,
+        through: :taggings
+
+    def self.create_tags(tags_arr, question)
+        tags_arr.each do |tag|
+            new_tag = Tag.find_by(name: tag) || Tag.create!(name: tag)
+            Tagging.create(question_id: question.id, tag_id: new_tag.id)
+        end
+    end
+
+    def self.destroy_tags(tags)
+        tags.each do |tag|
+            tag.destroy
+        end
+    end
 end
