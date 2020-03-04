@@ -48,14 +48,16 @@ class SessionForm extends React.Component{
                 <button className='demo-login' onClick={() => 
                     this.props.login(demoUser)}>Demo Login</button>
                 <div className='sign-up-link'>
-                    Don't have an account? <Link to={`/signup`} ><span>Signup</span></Link>
+                    Don't have an account? <Link to={`/signup`} ><span>Sign up</span></Link>
                 </div>
             </div>
 
         return (
             <>
                 <div className='form'>
-                    <h2 className='form-type'>{this.props.formType}</h2>
+                    <Link to={`/`}>
+                        <img className="img-sign-logo" src={window.logo} />
+                    </Link>
                     <form className='form-page' onSubmit={this.handleSubmit}>
                         <label>Username:
                             <br/>

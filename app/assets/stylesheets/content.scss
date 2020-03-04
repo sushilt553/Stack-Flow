@@ -1,5 +1,6 @@
 .form {
     display: flex;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
     flex-direction: column;
     align-items: center;
     position: relative;
@@ -93,4 +94,10 @@
 
 .login-link span {
     color: #0077cc;
+}
+
+.img-sign-logo {
+    width: 90px;
+    height: 60px;
+    padding: 3px;
 }
