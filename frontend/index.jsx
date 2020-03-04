@@ -3,12 +3,13 @@ import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
 //test only
-// import {requestAllQuestions, requestQuestion, deleteQuestion, updateQuestion} from './actions/stack_actions';
+import {requestAllQuestions, postQuestion, requestQuestion, deleteQuestion, updateQuestion} from './actions/stack_actions';
 
-// window.questions = requestAllQuestions;
-// window.question = requestQuestion;
-// window.delete = deleteQuestion;
-// window.update = updateQuestion;
+window.questions = requestAllQuestions;
+window.question = requestQuestion;
+window.delete = deleteQuestion;
+window.update = updateQuestion;
+window.create = postQuestion;
 
 document.addEventListener('DOMContentLoaded', () => {
     const root = document.getElementById('root');
@@ -28,6 +29,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     delete window.currentUser
     const store = configureStore(preloadedState)
-    // window.store = store;
+    window.store = store;
     ReactDOM.render(<Root store={store} />, root);
 })

@@ -24,7 +24,12 @@ class Api::QuestionsController < ApplicationController
     end
 
     def update
-        @question = Question.find(params[:id])
+        tag= Tag.find_by(name: params[:question][:tag_name]) || 
+            Tag.create!(name: params[:question][:tag_name])
+
+        @question = Question.new(question_params.except(:tag_name))
+        
+        @question.tag_id = tag.id
 
         if @question.update_attributes(question_params)
             render :show
@@ -34,7 +39,12 @@ class Api::QuestionsController < ApplicationController
     end
 
     def create
-        @question = current_user.questions.new(question_params)
+        tag= Tag.find_by(name: params[:question][:tag_name]) || 
+            Tag.create!(name: params[:question][:tag_name])
+
+        @question = Question.new(question_params.except(:tag_name))
+        
+        @question.tag_id = tag.id
 
         if @question.save
             render :show
@@ -55,6 +65,6 @@ class Api::QuestionsController < ApplicationController
 
     private
     def question_params
-        params.require(:question).permit(:title, :body, :tag)
+        params.require(:question).permit(:title, :body, :tag_name, :author_id)
     end
 end
