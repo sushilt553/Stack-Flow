@@ -1,0 +1,15 @@
+.single-question {
+    margin-top: 10px;
+    border-top: 0.5px solid #eff0f1;
+    border-bottom: 0.5px solid #eff0f1;
+    padding: 10px;
+    list-style: none;
+}
+
+.single-question>.question-body {
+    color: #1a77cc;
+}
+
+.single-question>.question-body:hover {
+    color: #2395ff;
+}

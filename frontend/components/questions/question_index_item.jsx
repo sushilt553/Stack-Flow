@@ -11,8 +11,8 @@ const QuestionIndexItem = (props) => {
         null;
     
     return (
-        <li key={props.question.id}>
-            <Link to={`/questions/${props.question.id}`} >{props.question.body}</Link>
+        <li class="single-question" key={props.question.id}>
+            <Link class="question-body" to={`/questions/${props.question.id}`} >{props.question.title}</Link>
             {buttons}
         </li>
     )

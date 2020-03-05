@@ -19,10 +19,8 @@ class QuestionsIndex extends React.Component{
         );
 
         return(
-            <div>
-                <ul>
-                    {questions}
-                </ul>
+            <div class="main-questions-list">
+                {questions}
             </div>
         )
     }

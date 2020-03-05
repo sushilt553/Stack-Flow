@@ -7,13 +7,18 @@ body {
     justify-content: space-between;
     align-items: center;
     background-color: #fafafb;
-    border-top: 2px solid #f48024;
+    border-top: 3px solid #f48024;
     height: 60px;
 }
 
 .header-nav {
     display: flex;
     align-content: center;
+    width: 12%;
+}
+
+.header-nav>a {
+    display: block;
 }
 
 .sign-page {

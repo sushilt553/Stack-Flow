@@ -1,17 +1,101 @@
 .main-home-page {
     display: flex;
     background-color: #ffffff;
-    // justify-content: center;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
 }
 
-.side-bar {
-    border-right: 1px solid gray;
-    padding: 0 30px;
+.div-sidebar {
+    border-right: 1px solid #d6d9dc;
+    padding-top: 30px;
+    padding-left: 5px;
+    width: 10%;
 }
 
 .div-sidebar>ul>li {
     list-style: none;
     position: relative;
+    color: #6f7881;
+    font-size: 12px;
     margin: 10px;
     left: -25px;
+}
+
+.div-sidebar>p {
+    margin-top: 20px;
+    font-size: 12px;
+    color: #6f7881;
+}
+
+.active {
+    background-color: #eceff1;
+    display: block;
+    border-right: 3px solid #f48024;
+    padding: 5px 100px 5px 2px;
+}
+
+.index-container {
+    display: flex;
+    width: 90%
+}
+
+.index-container>.front-page {
+    width: 70%;
+}
+
+.index-container .ask-button {
+    min-width: 100px;
+    padding: 10px;
+    margin: 10px 10px 5px 10px;
+    height: 35px;
+    color: #ffffff;
+    background-color: #2395ff;
+    border-radius: 4px;
+    box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.4);
+}
+
+.index-container .ask-button:hover {
+    background-color: #1a77cc;
+}
+
+.block-top {
+    display: flex;
+    justify-content: space-between;
+}
+
+.block-top>h2 {
+    margin-left: 10px;
+    font-weight: normal;
+}
+
+.side-page {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+}
+
+.side-page>.blog-post {
+    margin-bottom: 20px;
+    background-color: #fdf7e3;
+    border: 1px solid #f1e5bc;
+    border-radius: 8px;
+}
+
+.side-page>.blog-post>h3 {
+    background-color: #fbf2d4;
+    padding: 10px;
+    color: #6a737c;
+    border-top: 0.5px solid #f1e5bc;
+}
+
+.blog-post>li {
+    padding: 20px;
+    list-style: none;
+    color: #484c50;
+    font-size: 12px;
+    border-top: 0.5px solid #f1e5bc;
+}
+
+.hot-questions {
+    color: #3c4146;
 }

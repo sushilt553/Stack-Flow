@@ -50,6 +50,10 @@ li>.logout:hover {
     padding-left: 30px;
 }
 
+.products {
+    width: 20%;
+}
+
 .products>button {
     margin: 10px;
     padding: 7px;
@@ -65,6 +69,7 @@ li>.logout:hover {
 
 .search-bar {
     position: relative;
+    width: 50%;
 }
 
 .search-bar>img {
