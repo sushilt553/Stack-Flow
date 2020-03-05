@@ -55,7 +55,7 @@ class Api::QuestionsController < ApplicationController
     end
 
     def destroy
-        @question = Question.find_by(id: params[:id])
+        @question = current_user.questions.find_by(id: params[:id])
 
         if @question
             @question.destroy

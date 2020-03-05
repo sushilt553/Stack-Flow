@@ -2,9 +2,10 @@ import { connect } from 'react-redux';
 import QuestionsIndex from './questions_index';
 import { deleteQuestion, requestAllQuestions } from '../../actions/stack_actions';
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
     return {
-        questions: Object.values(state.entities.questions)
+        questions: Object.values(state.entities.questions),
+        sessionId: state.session.id
     }
 }
 

@@ -1,31 +1,31 @@
 import React from 'react';
-import ReactQuill from 'react-quill';
-import { toolbarOptions } from '../../util/quill_toolbar_options';
+// import ReactQuill from 'react-quill';
+// import { toolbarOptions } from '../../util/quill_toolbar_options';
+import { Redirect} from 'react-router-dom';
 
 class QuestionForm extends React.Component {
     constructor(props){
         super(props);
         this.state = this.props.question;
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.updateQuill = this.updateQuill.bind(this);
+        // this.updateQuill = this.updateQuill.bind(this);
     }
 
     update(field){
         return (e) => this.setState({[field]: e.currentTarget.value})
     }
 
-    updateQuill(value) {
-        this.setState({body: value})
-    }
+    // updateQuill(value) {
+    //     this.setState({body: value})
+    // }
 
     componentWillUnmount(){
         this.props.clearQuestionErrors();
     }
 
     handleSubmit(e){
-        e.preventDefault;
+        e.preventDefault();
         this.props.submitQuestion(this.state)
-        .then(() => this.props.history.push('/home'))
     }
 
     render(){
@@ -47,11 +47,15 @@ class QuestionForm extends React.Component {
 
                     <label>Body
                         <p>Include all the information someone would need to answer your question</p>
-                        <ReactQuill 
+                        <textarea 
+                            value={this.state.body} 
+                            cols="30" rows="10" 
+                            onChange={this.update('body')}/>
+                        {/* <ReactQuill 
                             modules={{toolbar: toolbarOptions}}
                             value={this.state.body}
                             onChange={this.updateQuill}
-                        />
+                        /> */}
                     </label>
 
                     <label>Tags

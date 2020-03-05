@@ -10,7 +10,6 @@ class HomePage extends React.Component{
             <div>
                 <button><Link to='/questions/new'>Ask Question</Link></button>
                 <QuestionIndexContainer />
-                {/* <QuestionFormContainer /> */}
             </div>
         )
     }

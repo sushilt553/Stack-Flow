@@ -4,7 +4,6 @@ import QuestionIndexItem from './question_index_item';
 class QuestionsIndex extends React.Component{
 
     componentDidMount(){
-        debugger
         this.props.requestAllQuestions();
     }
 
@@ -12,8 +11,10 @@ class QuestionsIndex extends React.Component{
 
         const questions = this.props.questions.map(question => 
             <QuestionIndexItem
+                key={question.id}
                 question={question}
-                deleteQuestion={this.props.deleteQuestion} 
+                deleteQuestion={this.props.deleteQuestion}
+                sessionId={this.props.sessionId} 
               />
         );
 

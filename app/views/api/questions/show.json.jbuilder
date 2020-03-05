@@ -3,5 +3,5 @@ tags = []
     tags.push(tag.name)
 end
 
-json.extract! @question, :id, :title, :body
+json.extract! @question, :id, :title, :body, :author_id
 json.set!('tags', tags.join(" "))
