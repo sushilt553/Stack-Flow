@@ -1,0 +1,18 @@
+import { connect } from 'react-redux';
+import QuestionsIndex from './questions_index';
+import { deleteQuestion, requestAllQuestions } from '../../actions/stack_actions';
+
+const mapStateToProps = state => {
+    return {
+        questions: Object.values(state.entities.questions)
+    }
+}
+
+const mapDispatchToProps = dispatch => {
+    return {
+        deleteQuestion: (questionId) => dispatch(deleteQuestion(questionId)),
+        requestAllQuestions: () => dispatch(requestAllQuestions())
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(QuestionsIndex);

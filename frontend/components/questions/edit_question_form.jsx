@@ -1,4 +1,5 @@
 import React from 'react';
+import QuestionForm from './question_form';
 
 class EditQuestionForm extends React.Component {
 
@@ -16,6 +17,8 @@ class EditQuestionForm extends React.Component {
                 question={question}
                 formType={formType}
                 submitQuestion={submitQuestion}
+                errors={this.props.errors}
+                clearQuestionErrors={this.props.clearQuestionErrors}
             />
         )
     }
