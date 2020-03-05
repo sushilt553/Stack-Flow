@@ -25,7 +25,6 @@ class QuestionForm extends React.Component {
 
     handleSubmit(e){
         e.preventDefault();
-        debugger;
         this.props.submitQuestion(this.state)
         .then(() => this.props.history.push("/home"))
     }
@@ -34,47 +33,71 @@ class QuestionForm extends React.Component {
         const errors = this.props.errors.map((error, index) => <li key={index}>{error}</li>)
         
         return(
-            <div>
-                <h2>{this.props.formType}</h2>
-                <form onSubmit={this.handleSubmit}>
-                    <label>Title 
-                        <p>Be specific and imagine you're asking a question to another person</p>
-                        <input 
-                            type="text"
-                            value={this.state.title}
-                            onChange={this.update('title')}
-                            placeholder="e.g. Is there an R function for finding the index of an element in a vector?"
-                            />
-                    </label>
+            <div className='form-page-container'>
+                <h3 className='form-type'>{this.props.formType}</h3>
+                <div className='main-container'>
+                    <form className='question-form-1' onSubmit={this.handleSubmit}>
+                        <section className='question-form'>
+                            <label><strong>Title</strong> 
+                                <p>Be specific and imagine you're asking a question to another person</p>
+                                <input 
+                                    type="text"
+                                    value={this.state.title}
+                                    onChange={this.update('title')}
+                                    placeholder="e.g. Is there an R function for finding the index of an element in a vector?"
+                                    />
+                            </label>
+                            <label><strong>Body</strong>
+                                <p>Include all the information someone would need to answer your question</p>
+                                <textarea 
+                                    value={this.state.body} 
+                                    cols="30" rows="10" 
+                                    onChange={this.update('body')}/>
+                                {/* <ReactQuill 
+                                    modules={{toolbar: toolbarOptions}}
+                                    value={this.state.body}
+                                    onChange={this.updateQuill}
+                                /> */}
+                            </label>
 
-                    <label>Body
-                        <p>Include all the information someone would need to answer your question</p>
-                        <textarea 
-                            value={this.state.body} 
-                            cols="30" rows="10" 
-                            onChange={this.update('body')}/>
-                        {/* <ReactQuill 
-                            modules={{toolbar: toolbarOptions}}
-                            value={this.state.body}
-                            onChange={this.updateQuill}
-                        /> */}
-                    </label>
+                            <label><strong>Tags</strong>
+                                <p>Add up to 5 tags to describe what your question is about</p>
+                                <input
+                                    type="text"
+                                    value={this.state.tags}
+                                    onChange={this.update('tags')}
+                                    placeholder='e.g.(ruby rails jquery'
+                                    />
+                            </label>
+                        </section>
+                        <input type="submit" value={this.props.buttonType}/>
+                        <ul className="question-errors">
+                            {errors}
+                        </ul>
+                    </form>
+                    <section className='main-section'> 
+                        <article className="first-par">
+                            <p className='first'>Step 1: Draft your question</p>
+                            <p className='second'>The community is here to help you with specific coding, algorith, or language problems.nav-page</p>
+                            <p className='second'>Avoid asking opinion-based questions.</p>
 
-                    <label>Tags
-                        <p>Add up to 5 tags to describe what your question is about</p>
-                        <input
-                            type="text"
-                            value={this.state.tags}
-                            onChange={this.update('tags')}
-                            placeholder='e.g.(ruby rails jquery'
-                            />
-                    </label>
+                            <ol>
+                                <li class='topic'>Summarize the problem
+                                <ul> 
+                                    <li class='lis'>Include details about your goal</li>
+                                    <li class='lis'>Describe expected and actual results</li>
+                                    <li class='lis'>Include any error messages</li>
+                                </ul>
+                                </li>
+                                <li class='topic'>Describe what you've tried</li>
+                                <li class='topic'>Show some code</li>
+                            </ol>
+                        </article>
 
-                    <input type="submit" value={this.props.formType}/>
-                </form>
-                <ul>
-                    {errors}
-                </ul>
+                        <a href="#"><section className="second-par">Have a non-programming question?</section></a>
+                        <a href="#"><section className="third-par">More helpful links</section></a>
+                    </section>
+                </div>
             </div>
         )
     }

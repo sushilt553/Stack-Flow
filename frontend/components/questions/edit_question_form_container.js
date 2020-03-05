@@ -7,7 +7,8 @@ const mapStateToProps = (state, ownProps) => {
     const question = state.entities.questions[questionId]
     return {
         question: question,
-        formType: 'Update question',
+        formType: 'Edit your question',
+        buttonType: 'Update question',
         errors: state.errors.question
     }
 }

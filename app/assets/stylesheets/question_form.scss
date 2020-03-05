@@ -1,0 +1,123 @@
+.form-page-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    margin: 30px;
+}
+
+.form-page-container>.form-type {
+    font-size: 30px;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+.main-container {
+    display: flex;
+    justify-content: center;
+}
+
+.question-form-1>.question-form {
+    border: 1px solid transparent;
+    margin: 4px;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    background-color: #ffffff;
+}
+
+.question-form label {
+    margin: 8px;
+}
+
+.question-form-1 p {
+    font-size: 12px;
+    margin: 2px;
+}
+
+.question-form-1 input {
+    min-width: 780px;
+    height: 30px;
+    padding-left: 8px;
+}
+
+.question-form-1 textarea {
+    min-width: 780px;
+    height: 300px;
+}
+
+.question-form-1>input[type='submit'] {
+    min-width: 140px;
+    padding: 10px;
+    margin: 10px 10px 5px 10px;
+    height: 35px;
+    color: #ffffff;
+    background-color: #0196ff;
+    border-radius: 4px;
+}
+
+.question-form-1 {
+    position: relative;
+}
+
+.question-form-1>.question-errors {
+    position: absolute;
+    font-size: 12px;
+    top: 20px;
+    left: 500px;
+    color: red;
+}
+
+div>.main-section {
+    display: flex;
+    margin-left: 10px;
+    flex-direction: column;
+    padding: 20px;
+    // margin: 10px;
+    // height: 200px;
+    // justify-content: flex-start;
+}
+
+.main-section>.first-par {
+    background-color: #ffffff;
+}
+
+.main-section>.first-par>.first {
+    border-bottom: 1px solid #e4e6e8;
+    background-color: #fafafb;
+    color: #6a737c;
+}
+
+.main-section>.first-par>.second {
+    font-size: 15px;
+    margin: 10px 10px 10px 0;
+}
+
+.main-section>.first-par>p {
+    padding: 0 0 10px 20px;
+}
+
+.main-section .topic {
+    font-weight: bold;
+}
+
+.main-section .topic {
+    margin: 20px 0;
+}
+
+.main-section .lis {
+    font-weight: normal;
+    list-style: inside;
+    position: relative;
+    left: -50px;
+    font-size: 15px;
+    margin: 15px;
+}
+
+.second-par,
+.third-par {
+    background-color: #fafafb;
+    color: #6a737c;
+    margin: 20px 0;
+    padding: 15px;
+}

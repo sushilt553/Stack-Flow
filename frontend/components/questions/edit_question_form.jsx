@@ -8,7 +8,7 @@ class EditQuestionForm extends React.Component {
     }
 
     render() {
-        const { question, formType, submitQuestion, errors, clearQuestionErrors } = this.props;
+        const { question, formType, buttonType, submitQuestion, errors, clearQuestionErrors } = this.props;
 
         if (!question) return null;
 
@@ -16,6 +16,7 @@ class EditQuestionForm extends React.Component {
             <QuestionForm 
                 question={question}
                 formType={formType}
+                buttonType={buttonType}
                 submitQuestion={submitQuestion}
                 errors={errors}
                 clearQuestionErrors={clearQuestionErrors}

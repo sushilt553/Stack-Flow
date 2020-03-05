@@ -16,9 +16,9 @@ const App = () => {
             <NavBarContainer />    
         <Switch>
             <ProtectedRoute path={`/home`} component={HomePage} />
-            <ProtectedRoute path={`/questions/:questionId`} component={QuestionDetailsShowContainer}/>
-            <ProtectedRoute path={`/questions/:questionId/edit`} component={EditQuestionFormContainer} />
             <ProtectedRoute path={`/questions/new`} component={QuestionFormContainer} />
+            <ProtectedRoute path={`/questions/:questionId/edit`} component={EditQuestionFormContainer} />
+            <ProtectedRoute path={`/questions/:questionId`} component={QuestionDetailsShowContainer}/>
             <AuthRoute path={`/signup`} component={SignupFormContainer} />
             <AuthRoute path={`/login`} component={LoginFormContainer} />
             <AuthRoute path={`/`} component={SplashPage} />

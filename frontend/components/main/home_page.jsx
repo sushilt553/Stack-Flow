@@ -1,6 +1,5 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-// import QuestionFormContainer from '../questions/question_form_container';
 import QuestionIndexContainer from '../questions/questions_index_container';
 
 class HomePage extends React.Component{
