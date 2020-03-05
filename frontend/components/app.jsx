@@ -8,6 +8,7 @@ import EditQuestionFormContainer from './questions/edit_question_form_container'
 import NavBarContainer from './main/nav_bar_container';
 import HomePage from '../components/main/home_page';
 import SplashPage from '../components/main/splash_page';
+import QuestionDetailsShowContainer from './questions/question_details_show_container';
 
 const App = () => {
     return (
@@ -15,6 +16,7 @@ const App = () => {
             <NavBarContainer />    
         <Switch>
             <ProtectedRoute path={`/home`} component={HomePage} />
+            <ProtectedRoute path={`/questions/:questionId`} component={QuestionDetailsShowContainer}/>
             <ProtectedRoute path={`/questions/:questionId/edit`} component={EditQuestionFormContainer} />
             <ProtectedRoute path={`/questions/new`} component={QuestionFormContainer} />
             <AuthRoute path={`/signup`} component={SignupFormContainer} />

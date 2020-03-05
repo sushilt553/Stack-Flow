@@ -12,7 +12,7 @@ const QuestionIndexItem = (props) => {
     
     return (
         <li key={props.question.id}>
-            {props.question.body}
+            <Link to={`/questions/${props.question.id}`} >{props.question.body}</Link>
             {buttons}
         </li>
     )
