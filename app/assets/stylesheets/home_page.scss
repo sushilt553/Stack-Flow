@@ -1,0 +1,17 @@
+.main-home-page {
+    display: flex;
+    background-color: #ffffff;
+    // justify-content: center;
+}
+
+.side-bar {
+    border-right: 1px solid gray;
+    padding: 0 30px;
+}
+
+.div-sidebar>ul>li {
+    list-style: none;
+    position: relative;
+    margin: 10px;
+    left: -25px;
+}
