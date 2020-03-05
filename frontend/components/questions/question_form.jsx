@@ -1,7 +1,7 @@
 import React from 'react';
 // import ReactQuill from 'react-quill';
 // import { toolbarOptions } from '../../util/quill_toolbar_options';
-import { Redirect} from 'react-router-dom';
+import { Redirect, withRouter} from 'react-router-dom';
 
 class QuestionForm extends React.Component {
     constructor(props){
@@ -25,7 +25,9 @@ class QuestionForm extends React.Component {
 
     handleSubmit(e){
         e.preventDefault();
+        debugger;
         this.props.submitQuestion(this.state)
+        .then(() => this.props.history.push("/home"))
     }
 
     render(){
@@ -78,4 +80,4 @@ class QuestionForm extends React.Component {
     }
 }
 
-export default QuestionForm;
+export default withRouter(QuestionForm);
