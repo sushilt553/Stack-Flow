@@ -12,7 +12,7 @@ import QuestionDetailsShowContainer from './questions/question_details_show_cont
 
 const App = () => {
     return (
-        <div>
+        <>
             <NavBarContainer />    
         <Switch>
             <ProtectedRoute path={`/home`} component={HomePage} />
@@ -24,7 +24,7 @@ const App = () => {
             <AuthRoute path={`/`} component={SplashPage} />
             <Redirect to={`/login`}/>
         </Switch>
-        </div>
+        </>
     )
 }
 

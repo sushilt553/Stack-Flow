@@ -1,9 +1,9 @@
-export const fetchAllAnswers = () => {
-    return $.ajax({
-        method: 'get',
-        url: `/api/answers`
-    })
-}
+// export const fetchAllAnswers = () => {
+//     return $.ajax({
+//         method: 'get',
+//         url: `/api/answers`
+//     })
+// }
 
 export const fetchAnswer = (answerId) => {
     return $.ajax({
@@ -15,7 +15,7 @@ export const fetchAnswer = (answerId) => {
 export const postAnswer = (answer) => {
     return $.ajax({
         method: 'post',
-        url: `/api/questions/${answer.question_id}/answers`,
+        url: `/api/questions/${answer.questionId}/answers`,
         data: {answer}
     })
 }

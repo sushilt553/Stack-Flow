@@ -8,7 +8,7 @@ Rails.application.routes.draw do
       resources :answers, only: [:create]
     end
 
-    resources :answers, only: [:index, :show, :edit, :update, :destroy]
+    resources :answers, only: [:show, :edit, :update, :destroy]
 
     resources :tags, only: [:index]
 

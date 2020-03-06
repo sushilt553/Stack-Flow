@@ -54,6 +54,10 @@ class SessionForm extends React.Component{
             </div>
 
         return (
+            <>
+            <div className="login-errors">
+                {errors}
+            </div>
             <section className="form-section">
                 <div className='form'>
                     <Link to={`/`}>
@@ -79,12 +83,10 @@ class SessionForm extends React.Component{
                         {email}
                         <input type="submit" value={this.props.formType}/>
                     </form>
-                    <ul className='login-errors'>
-                        {errors}
-                    </ul>
-                {link}
+                    {link}
                 </div>
             </section>
+            </>
         )
     }
 }

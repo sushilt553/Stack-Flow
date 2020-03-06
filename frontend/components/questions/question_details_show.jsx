@@ -1,6 +1,7 @@
 import React from 'react';
 import Sidebar from '../main/sidebar';
 import BlogPage from '../main/blog_page';
+import AnswerFormContainer from '../answers/answer_form_container';
 import {Link} from 'react-router-dom';
 
 class QuestionDetailsShow extends React.Component{
@@ -45,6 +46,7 @@ class QuestionDetailsShow extends React.Component{
                     <ul className="all-tags">
                         {tags}
                     </ul>
+                    <AnswerFormContainer questionId={this.props.question.id} />
                 </div>
                 <BlogPage />
             </section>

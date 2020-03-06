@@ -5,14 +5,15 @@ export const REMOVE_ANSWER = 'REMOVE_ANSWER';
 export const RECEIVE_ANSWER_ERRORS = 'RECEIVE_ANSWER_ERRORS';
 export const CLEAR_ANSWER_ERRORS = 'CLEAR_ANSWER_ERRORS';
 
-export const receiveAllAnswers = (answers) => {
-    return {
-        type: RECEIVE_ALL_ANSWERS,
-        answers
-    }
-}
+// export const receiveAllAnswers = (answers) => {
+//     return {
+//         type: RECEIVE_ALL_ANSWERS,
+//         answers
+//     }
+// }
 
 export const receiveAnswer = (answer) => {
+    debugger;
     return {
         type: RECEIVE_ANSWER,
         answer
@@ -39,11 +40,11 @@ export const receiveAnswerErrors = (errors) => {
     }
 }
 
-export const requestAllAnswers = () => dispatch => (
-    AnswerStackAPIUtil.fetchAllAnswers()
-    .then(answers => dispatch(receiveAllAnswers(answers)))
-    .fail(errors => dispatch(receiveAnswerErrors(errors.responseJSON)))
-)
+// export const requestAllAnswers = () => dispatch => (
+//     AnswerStackAPIUtil.fetchAllAnswers()
+//     .then(answers => dispatch(receiveAllAnswers(answers)))
+//     .fail(errors => dispatch(receiveAnswerErrors(errors.responseJSON)))
+// )
 
 export const requestAnswer = answerId => dispatch => (
     AnswerStackAPIUtil.fetchAnswer(answerId)

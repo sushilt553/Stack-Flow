@@ -15,5 +15,6 @@ end
         json.extract! question, :id, :title, :body, :author_id
         json.set!('tags', joiner(question))
         json.set!('author_name', find_author_name(question))
+        json.set!('answers', question.answers)
     end
 end
