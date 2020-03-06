@@ -25,7 +25,8 @@ class SessionForm extends React.Component{
     render(){
 
         const email = (this.props.formType === 'Sign Up') ?
-            <label>Email:
+            <label>Email
+                <br/>
                 <input 
                     type="text" 
                     value={this.state.email} 
@@ -53,13 +54,13 @@ class SessionForm extends React.Component{
             </div>
 
         return (
-            <>
+            <section className="form-section">
                 <div className='form'>
                     <Link to={`/`}>
                         <img className="img-sign-logo" src={window.logo} />
                     </Link>
                     <form className='form-page' onSubmit={this.handleSubmit}>
-                        <label>Username:
+                        <label>Username
                             <br/>
                             <input 
                             type="text" 
@@ -67,7 +68,7 @@ class SessionForm extends React.Component{
                             onChange={this.update('username')}
                             />
                         </label>
-                        <label>Password:
+                        <label>Password
                             <br/>
                             <input 
                             type="password" 
@@ -83,7 +84,7 @@ class SessionForm extends React.Component{
                     </ul>
                 {link}
                 </div>
-            </>
+            </section>
         )
     }
 }

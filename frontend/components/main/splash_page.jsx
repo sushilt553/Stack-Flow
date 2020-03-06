@@ -4,18 +4,18 @@ class SplashPage extends React.Component{
 
     render(){
         return (
-            <div className='splash'>
-                <img src={window.splash} />
-                <div className='splash-content'>
-                    <div className='splash-h-p'>
-                        <h1 className='splash-header'>We love people who code</h1>
-                        <p className='splash-paragraph'>We are here to empower developers and connect them with each other to solve software engineering problems.</p>
+            <div className="splash">
+                <img className="splash-image" src={window.splash} />
+                    <div className='splash-p'>
+                        <div className="splash-headers">
+                            <h2>We love people who code</h2>
+                            <p>We are here to empower developers and connect them with each other to solve software engineering problems.</p>
+                        </div>
+                        <div className="dev-bus-btns">
+                            <p className="dev-bus-1">For Developers</p>
+                            <p className="dev-bus-2">For Businesses</p>
+                        </div>
                     </div>
-                    <div className='btns'>
-                        <button className='btn-1'>For Developers</button>
-                        <button className='btn-2'>For Businesses</button>
-                    </div>
-                </div>
             </div>
         )
     }

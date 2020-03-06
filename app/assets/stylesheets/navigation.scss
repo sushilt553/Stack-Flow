@@ -51,25 +51,15 @@ li>.logout:hover {
 }
 
 .products {
-    width: 20%;
-}
-
-.products>button {
-    margin: 10px;
-    padding: 7px;
-    border: transparent;
-    background-color: transparent;
-}
-
-.products>button:hover {
-    background-color: #e4e6e8;
-    border-radius: 10px;
-    color: #0c0d0e;
+    display: flex;
+    justify-content: space-between;
+    width: 12%;
+    font-size: 14px;
 }
 
 .search-bar {
     position: relative;
-    width: 50%;
+    // width: 50%;
 }
 
 .search-bar>img {
@@ -78,4 +68,8 @@ li>.logout:hover {
     position: absolute;
     left: 8px;
     top: 10px;
+}
+
+i {
+    color: #0307f1
 }
