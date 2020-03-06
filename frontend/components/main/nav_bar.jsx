@@ -54,7 +54,9 @@ class NavBar extends React.Component {
                         <img src={window.glass} />
                         <input type="text" placeholder="Search..." />
                     </nav>
-                    <i className="fas fa-user">Welcome {this.props.user.username}</i>
+                    <i className="fas fa-user">
+                        <span>Welcome {this.props.user.username}</span>
+                    </i>
                     
                     <ul>
                         <li><button className='logout' onClick={this.props.logout}>

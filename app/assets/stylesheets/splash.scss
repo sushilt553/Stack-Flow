@@ -84,8 +84,13 @@
     .splash-headers>h2,
     .splash-headers>p {
         width: 50%;
+        font-size: 25px;
         color: #f2f2f2;
         margin-left: 115px;
+    }
+    
+    .splash-headers>h2 {
+        font-size: 40px;
     }
     
     .dev-bus-btns {
@@ -99,6 +104,7 @@
         border-radius: 8px;
         font-size: 30px;
         width: 40%;
+        margin-left: 10px;
     }
     
     .dev-bus-1 {

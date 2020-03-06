@@ -8,18 +8,17 @@ class QuestionsIndex extends React.Component{
     }
 
     render(){
-
         const questions = this.props.questions.map(question => 
             <QuestionIndexItem
                 key={question.id}
                 question={question}
                 deleteQuestion={this.props.deleteQuestion}
-                sessionId={this.props.sessionId} 
+                // sessionId={this.props.sessionId}
               />
-        );
+        ).reverse();
 
         return(
-            <div class="main-questions-list">
+            <div className="main-questions-list">
                 {questions}
             </div>
         )
