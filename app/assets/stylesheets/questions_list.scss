@@ -14,7 +14,20 @@
     color: #2395ff;
 }
 
+.all-show-tags {
+    display: flex;
+    justify-content: space-between;
+}
+
+.show-tags {
+    display: flex;
+    align-items: center;
+    position: relative;
+    left: -3%;
+}
+
 .posted-by {
+    // margin-left: 90%;
     color: #6f7881;
     font-size: 12px;
 }
