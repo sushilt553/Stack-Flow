@@ -1,5 +1,4 @@
-import * as StackAPIUtil from '../util/stack_api_util';
-
+import * as QuestionStackAPIUtil from '../util/question_stack_api_util';
 export const RECEIVE_ALL_QUESTIONS = 'RECEIVE_ALL_QUESTIONS';
 export const RECEIVE_QUESTION = 'RECEIVE_QUESTION';
 export const REMOVE_QUESTION = 'REMOVE_QUESTION';
@@ -41,31 +40,31 @@ export const receiveQuestionErrors = errors => {
 }
 
 export const requestAllQuestions = () => dispatch => (
-    StackAPIUtil.fetchAllQuestions()
+    QuestionStackAPIUtil.fetchAllQuestions()
     .then(questions => dispatch(receiveAllQuestions(questions)))
     .fail(errors => dispatch(receiveQuestionErrors(errors.responseJSON)))
 )
 
 export const requestQuestion = questionId => dispatch => (
-    StackAPIUtil.fetchQuestion(questionId)
+    QuestionStackAPIUtil.fetchQuestion(questionId)
     .then(question => dispatch(receiveQuestion(question)))
     .fail(errors => dispatch(receiveQuestionErrors(errors.responseJSON)))
 )
 
 export const postQuestion = question => dispatch => (
-    StackAPIUtil.postQuestion(question)
+    QuestionStackAPIUtil.postQuestion(question)
     .then(question => dispatch(receiveQuestion(question)))
     .fail(errors => dispatch(receiveQuestionErrors(errors.responseJSON)))
 )
 
 export const updateQuestion = question => dispatch => (
-    StackAPIUtil.updateQuestion(question)
+    QuestionStackAPIUtil.updateQuestion(question)
     .then(question => dispatch(receiveQuestion(question)))
     .fail(errors => dispatch(receiveQuestionErrors(errors.responseJSON)))
 )
 
 export const deleteQuestion = questionId => dispatch => (
-    StackAPIUtil.deleteQuestion(questionId)
+    QuestionStackAPIUtil.deleteQuestion(questionId)
     .then(() => dispatch(removeQuestion(questionId)))
     .fail(errors => dispatch(receiveQuestionErrors(errors.responseJSON)))
 )

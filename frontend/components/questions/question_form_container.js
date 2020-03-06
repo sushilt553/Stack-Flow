@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import QuestionForm from './question_form';
-import { postQuestion, clearQuestionErrors } from '../../actions/stack_actions';
+import { postQuestion, clearQuestionErrors } from '../../actions/question_stack_actions';
 
 const mapStateToProps = state => {
     return {

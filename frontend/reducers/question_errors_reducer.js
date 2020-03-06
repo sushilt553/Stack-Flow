@@ -3,7 +3,7 @@ import {
     RECEIVE_QUESTION,
     RECEIVE_ALL_QUESTIONS,
     CLEAR_QUESTION_ERRORS
-} from '../actions/stack_actions';
+} from '../actions/question_stack_actions';
 
 const QuestionErrorsReducer = (state = [], action) => {
     Object.freeze(state);

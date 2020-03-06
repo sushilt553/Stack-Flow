@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import EditQuestionForm from './edit_question_form';
-import { requestQuestion, updateQuestion, clearQuestionErrors } from '../../actions/stack_actions';
+import { requestQuestion, updateQuestion, clearQuestionErrors } from '../../actions/question_stack_actions';
 
 const mapStateToProps = (state, ownProps) => {
     const questionId = ownProps.match.params.questionId;

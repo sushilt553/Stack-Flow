@@ -4,7 +4,11 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: {format: :json} do
 
-    resources :questions
+    resources :questions do 
+      resources :answers, only: [:create]
+    end
+
+    resources :answers, only: [:index, :show, :edit, :update, :destroy]
 
     resources :tags, only: [:index]
 

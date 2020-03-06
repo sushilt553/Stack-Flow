@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import QuestionDetailsShow from './question_details_show';
-import { requestQuestion, deleteQuestion } from '../../actions/stack_actions';
+import { requestQuestion, deleteQuestion } from '../../actions/question_stack_actions';
 
 const mapStateToProps = (state, ownProps) => {
     const questionId = ownProps.match.params.questionId;

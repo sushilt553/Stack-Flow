@@ -2,7 +2,7 @@ import {
     RECEIVE_QUESTION,
     RECEIVE_ALL_QUESTIONS,
     REMOVE_QUESTION
-} from '../actions/stack_actions';
+} from '../actions/question_stack_actions';
 
 const QuestionsReducer = (state = {}, action) => {
     Object.freeze(state);

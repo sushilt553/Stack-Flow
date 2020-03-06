@@ -29,7 +29,7 @@ class User < ApplicationRecord
         foreign_key: :author_id,
         class_name: :Answer
 
-    has_many :posted_question_answers
+    has_many :posted_question_answers,
         through: :questions,
         source: :answers
 
