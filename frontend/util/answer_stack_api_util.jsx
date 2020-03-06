@@ -5,6 +5,13 @@ export const fetchAllAnswers = () => {
     })
 }
 
+export const fetchAnswer = (answerId) => {
+    return $.ajax({
+        method: 'get',
+        url: `/api/answers/${answerId}`
+    })
+}
+
 export const postAnswer = (answer) => {
     return $.ajax({
         method: 'post',
