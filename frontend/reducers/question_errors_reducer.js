@@ -1,7 +1,7 @@
 import {
     RECEIVE_QUESTION_ERRORS,
     RECEIVE_QUESTION,
-    RECEIVE_ALL_QUESTIONS,
+    RECEIVE_ALL_QUESTIONS_AND_ANSWERS,
     CLEAR_QUESTION_ERRORS
 } from '../actions/question_stack_actions';
 
@@ -13,7 +13,7 @@ const QuestionErrorsReducer = (state = [], action) => {
             return action.errors;
         case RECEIVE_QUESTION:
             return [];
-        case RECEIVE_ALL_QUESTIONS:
+        case RECEIVE_ALL_QUESTIONS_AND_ANSWERS:
             return [];
         case CLEAR_QUESTION_ERRORS:
             return [];

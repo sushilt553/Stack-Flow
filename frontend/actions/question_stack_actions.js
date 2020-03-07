@@ -1,14 +1,14 @@
 import * as QuestionStackAPIUtil from '../util/question_stack_api_util';
-export const RECEIVE_ALL_QUESTIONS = 'RECEIVE_ALL_QUESTIONS';
+export const RECEIVE_ALL_QUESTIONS_AND_ANSWERS = 'RECEIVE_ALL_QUESTIONS_AND_ANSWERS';
 export const RECEIVE_QUESTION = 'RECEIVE_QUESTION';
 export const REMOVE_QUESTION = 'REMOVE_QUESTION';
 export const RECEIVE_QUESTION_ERRORS = 'RECEIVE_QUESTION_ERRORS';
 export const CLEAR_QUESTION_ERRORS = 'CLEAR_QUESTION_ERRORS';
 
-export const receiveAllQuestions = (questions) => {
+export const receiveAllQuestionsAndAnswers = (payload) => {
     return {
-        type: RECEIVE_ALL_QUESTIONS,
-        questions
+        type: RECEIVE_ALL_QUESTIONS_AND_ANSWERS,
+        payload
     }
 }
 
@@ -41,7 +41,7 @@ export const receiveQuestionErrors = errors => {
 
 export const requestAllQuestions = () => dispatch => (
     QuestionStackAPIUtil.fetchAllQuestions()
-    .then(questions => dispatch(receiveAllQuestions(questions)))
+    .then(payload => dispatch(receiveAllQuestionsAndAnswers(payload)))
     .fail(errors => dispatch(receiveQuestionErrors(errors.responseJSON)))
 )
 

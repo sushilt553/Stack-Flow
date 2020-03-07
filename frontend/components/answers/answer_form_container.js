@@ -2,9 +2,9 @@ import { connect } from 'react-redux';
 import AnswerForm from './answer_form';
 import { postAnswer } from '../../actions/answer_stack_actions';
 
-const mapStateToProps = state => {
+const mapStateToProps = (state, ownProps) => {
     return {
-        answer: { body: "", questionId: 0 },
+        answer: { body: "", questionId: ownProps.questionId },
         formType: 'Post Your Answer'
     }
 }

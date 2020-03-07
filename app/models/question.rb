@@ -21,7 +21,8 @@ class Question < ApplicationRecord
     has_many :answers,
         primary_key: :id,
         foreign_key: :question_id,
-        class_name: :Answer
+        class_name: :Answer,
+        dependent: :destroy
 
     has_many :taggings,
         primary_key: :id,

@@ -82,15 +82,15 @@ class QuestionForm extends React.Component {
                             <p className='second'>Avoid asking opinion-based questions.</p>
 
                             <ol>
-                                <li class='topic'>Summarize the problem
+                                <li className='topic'>Summarize the problem
                                 <ul> 
-                                    <li class='lis'>Include details about your goal</li>
-                                    <li class='lis'>Describe expected and actual results</li>
-                                    <li class='lis'>Include any error messages</li>
+                                    <li className='lis'>Include details about your goal</li>
+                                    <li className='lis'>Describe expected and actual results</li>
+                                    <li className='lis'>Include any error messages</li>
                                 </ul>
                                 </li>
-                                <li class='topic'>Describe what you've tried</li>
-                                <li class='topic'>Show some code</li>
+                                <li className='topic'>Describe what you've tried</li>
+                                <li className='topic'>Show some code</li>
                             </ol>
                         </article>
 

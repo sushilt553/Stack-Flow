@@ -15,8 +15,8 @@ class AnswerForm extends React.Component{
     handleSubmit(e){
         e.preventDefault();
         // debugger;
-        this.setState({questionId: this.props.questionId})
-        debugger;
+        // this.setState({ questionId: this.props.questionId})
+        // debugger;
         this.props.submitForm(this.state);
     }
 
