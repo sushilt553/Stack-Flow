@@ -39,7 +39,9 @@ class QuestionDetailsShow extends React.Component{
         const buttons = (this.props.question.author_id === this.props.sessionId) ?
             <>
                 <button className="del-edit"><Link to={`/questions/${this.props.question.id}/edit`}>Edit</Link></button>
-                <button className="del-edit" onClick={() => this.props.deleteQuestion(this.props.question.id).then(() => this.props.history.push("/home"))}>Delete</button>
+                <button className="del-edit" onClick={() => 
+                    this.props.deleteQuestion(this.props.question.id)
+                    .then(() => this.props.history.push("/home"))}>Delete</button>
             </>
             :
             null;
@@ -50,20 +52,33 @@ class QuestionDetailsShow extends React.Component{
         return(
             <section className="main-show-page">
                 <Sidebar />
-                <div className="question-show-page">
-                    <h2 className="question-title">{this.props.question.title}</h2>
-                    <p className="question-body">{this.props.question.body}</p>
-                    {buttons}
-                    <ul className="all-tags">
-                        {tags}
-                    </ul>
-                    {answersCount}
-                    <ul>
-                        {answersList}
-                    </ul>
-                    <AnswerFormContainer questionId={this.props.question.id} />
-                </div>
-                <BlogPage />
+                <section className='show-sub-section'>
+                    <div className='title-top'>
+                        <h2 className="question-title">{this.props.question.title}</h2>
+                        <button className="ask-button question-list"><Link to='/questions/new'>Ask Question</Link></button>
+                    </div>
+                    <div className="question-show-page">
+                        <div>
+                            <p className="question-body">{this.props.question.body}</p>
+    
+                            {buttons}
+
+                            <ul className="all-tags">
+                                <div className="tags-in">
+                                 {tags}
+                                </div>
+                                <p className="posted-by">Posted by {this.props.question.author_name}</p>
+                            </ul>
+                            <div className="answer-count">{answersCount}</div>
+                            <br/>
+                            <ul className="answer-list">
+                                {answersList}
+                            </ul>
+                            <AnswerFormContainer questionId={this.props.question.id} />
+                        </div>
+                        <BlogPage />
+                    </div>
+                </section>
             </section>
         )
     }

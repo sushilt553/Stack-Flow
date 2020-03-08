@@ -6,12 +6,13 @@ const AnswerListItem = (props) => {
     if (props.answer.author_id === props.sessionId){
         EDButtons = 
             <>
-            <button><Link to={`/answers/${props.answer.id}/edit`}>Edit</Link></button>
-            <button onClick={() => props.deleteAnswer(props.answer.id)}>Delete</button>
+            <br/>
+            <button className="del-edit"><Link to={`/answers/${props.answer.id}/edit`}>Edit</Link></button>
+            <button className="del-edit" onClick={() => props.deleteAnswer(props.answer.id)}>Delete</button>
             </>
     }
     return (
-        <li>
+        <li className="answer-list-item">
             {props.answer.body}
             {EDButtons}
         </li>

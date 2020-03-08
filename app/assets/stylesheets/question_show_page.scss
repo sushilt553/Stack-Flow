@@ -1,56 +1,83 @@
-.main-show-page {
-    display: flex;
-    background-color: #ffffff;
-    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-}
-
-.main-show-page>.div-sidebar {
-    width: 10%;
-}
-
-.question-show-page {
-    width: 65%;
-    margin-left: 20px;
-}
-
-.question-show-page>p {
-    font-size: 14px;
-    line-height: 20px;
-}
-
-.side-page {
-    width: 18%;
-}
-
-.all-tags {
-    display: flex;
-    position: relative;
-    left: -3.5%;
-}
-
-.tag-list {
-    // display: flex;
-    font-size: 12px;
-    padding: 5px;
-    margin: 3px;
-    border: 1px solid transparent;
-    background-color: #e2ecf4;
-    border-radius: 6px;
-    color: #39739e;
-}
-
-.tag-list:hover {
-    background-color: #d1e5f2;
-    color: #2c5777;
-}
-
-.question-show-page>.del-edit {
-    border: transparent;
-    margin: 2px;
-    padding: 2px 5px;
-    border-radius: 5px;
-}
-
-.question-show-page>.del-edit:hover {
-    background-color: #ededee;
-}
+    .main-show-page {
+        display: flex;
+        background-color: #ffffff;
+        font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    }
+    
+    .main-show-page>.div-sidebar {
+        width: 12%;
+    }
+    
+    .show-sub-section {
+        width: 88%;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .title-top {
+        display: flex;
+        justify-content: space-between;
+        margin: 0 12px;
+    }
+    
+    .title-top .question-title {
+        color: #3c4146;
+    }
+    
+    .question-show-page {
+        margin-left: 20px;
+        display: flex;
+        // flex-direction: column;
+    }
+    
+    .question-show-page>div {
+        width: 78%;
+    }
+    
+    .question-show-page .question-body {
+        font-size: 14px;
+        line-height: 20px;
+        margin-bottom: 10px;
+    }
+    
+    .side-page {
+        width: 22%;
+    }
+    
+    .all-tags {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .tags-in {
+        display: flex;
+        margin-bottom: 20px;
+    }
+    
+    .tag-list {
+        // display: flex;
+        font-size: 12px;
+        align-content: center;
+        padding: 5px;
+        margin: 3px;
+        border: 1px solid transparent;
+        background-color: #e2ecf4;
+        border-radius: 6px;
+        color: #39739e;
+    }
+    
+    .tag-list:hover {
+        background-color: #d1e5f2;
+        color: #2c5777;
+    }
+    
+    .del-edit {
+        border: transparent;
+        margin: 2px;
+        padding: 2px 5px;
+        border-radius: 5px;
+    }
+    
+    .del-edit:hover {
+        background-color: #ededee;
+    }

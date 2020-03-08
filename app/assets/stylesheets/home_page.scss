@@ -13,11 +13,10 @@
 
 .div-sidebar>ul>li {
     list-style: none;
-    position: relative;
+    // position: relative;
     color: #6f7881;
     font-size: 12px;
-    margin: 10px;
-    left: -25px;
+    margin: 10px 10px 10px 25px;
 }
 
 .div-sidebar>p {
@@ -48,7 +47,7 @@
     width: 70%;
 }
 
-.index-container .ask-button {
+.ask-button {
     min-width: 100px;
     padding: 10px;
     margin: 10px 10px 5px 10px;
