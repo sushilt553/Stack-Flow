@@ -18,8 +18,8 @@ const App = () => {
         <Switch>
             <ProtectedRoute path={`/home`} component={HomePage} />
             <ProtectedRoute path={`/questions/new`} component={QuestionFormContainer} />
-            <ProtectedRoute path={`/questions/:questionId`} component={QuestionDetailsShowContainer}/>
             <ProtectedRoute path={`/questions/:questionId/edit`} component={EditQuestionFormContainer} />
+            <ProtectedRoute path={`/questions/:questionId`} component={QuestionDetailsShowContainer}/>
             <ProtectedRoute path={`/answers/:answerId/edit`} component={EditAnswerFormContainer} />
             <AuthRoute path={`/signup`} component={SignupFormContainer} />
             <AuthRoute path={`/login`} component={LoginFormContainer} />

@@ -43,7 +43,7 @@ class QuestionDetailsShow extends React.Component{
             </>
             :
             null;
-
+        debugger;
         const tagsArr = this.props.question.tags.split(" ")
         const tags = tagsArr.map((tag, idx) => <li className="tag-list" key={idx} >{tag}</li>);
 
