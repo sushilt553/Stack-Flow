@@ -20,10 +20,12 @@ export const receiveAnswerAndQuestion = (payload) => {
     }
 }
 
-export const removeAnswer = (answerId) => {
+export const removeAnswer = (answer) => {
+    // debugger;
     return {
         type: REMOVE_ANSWER,
-        answerId
+        answerId: answer.id,
+        questionId: answer.question_id
     }
 }
 
@@ -72,6 +74,6 @@ export const updateAnswer = answer => dispatch => (
 
 export const deleteAnswer = answerId => dispatch => (
     AnswerStackAPIUtil.deleteAnswer(answerId)
-    .then(() => dispatch(removeAnswer(answerId)))
+    .then((answer) => dispatch(removeAnswer(answer)))
     .fail(errors => dispatch(receiveAnswerErrors(errors.responseJSON)))
 )

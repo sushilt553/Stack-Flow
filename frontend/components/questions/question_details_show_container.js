@@ -7,7 +7,7 @@ import { deleteAnswer } from '../../actions/answer_stack_actions';
 const mapStateToProps = (state, ownProps) => {
     const questionId = ownProps.match.params.questionId;
     const question = state.entities.questions[questionId];
-    debugger;
+    // debugger;
     let answers = [];
     let count = 0;
     if (question) {

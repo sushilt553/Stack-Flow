@@ -39,11 +39,11 @@ class QuestionDetailsShow extends React.Component{
         const buttons = (this.props.question.author_id === this.props.sessionId) ?
             <>
                 <button className="del-edit"><Link to={`/questions/${this.props.question.id}/edit`}>Edit</Link></button>
-                <button className="del-edit" onClick={() => this.props.deleteQuestion(this.props.question.id)}>Delete</button>
+                <button className="del-edit" onClick={() => this.props.deleteQuestion(this.props.question.id).then(() => this.props.history.push("/home"))}>Delete</button>
             </>
             :
             null;
-        debugger;
+        // debugger;
         const tagsArr = this.props.question.tags.split(" ")
         const tags = tagsArr.map((tag, idx) => <li className="tag-list" key={idx} >{tag}</li>);
 

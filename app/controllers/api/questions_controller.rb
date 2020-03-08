@@ -59,6 +59,7 @@ class Api::QuestionsController < ApplicationController
 
         if @question
             @question.destroy
+            render json: @question
         else
             render json: ['Author can only delete this question'], status: 422
         end

@@ -41,6 +41,7 @@ class Api::AnswersController < ApplicationController
 
         if @answer
             @answer.destroy
+            render json: @answer
         else
             render json: ["Answer not found"], status: 422
         end
