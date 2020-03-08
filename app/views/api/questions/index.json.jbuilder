@@ -24,7 +24,9 @@ json.answers do
     @questions.each do |question|
         question.answers.each do |answer|
             json.set!(answer.id) do
+                author_name = User.find_by(id: answer.author_id).username
                 json.extract! answer, :id, :body, :question_id, :author_id
+                json.set!('author_name', author_name)
             end
         end
     end

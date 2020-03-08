@@ -21,7 +21,7 @@ class QuestionDetailsShow extends React.Component{
     }
 
     render(){
-
+        // debugger;
         if (!this.props.question){
             return null;
         }

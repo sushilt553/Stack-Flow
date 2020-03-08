@@ -13,8 +13,15 @@ const AnswerListItem = (props) => {
     }
     return (
         <li className="answer-list-item">
-            {props.answer.body}
-            {EDButtons}
+            
+            <p>{props.answer.body}</p>
+            <section className="ed-p">
+                <div className="ed-btns">
+                    {EDButtons}
+                </div>
+                <p className="posted-by">Posted by {props.answer.author_name}</p>
+            </section>
+
         </li>
     )
 }

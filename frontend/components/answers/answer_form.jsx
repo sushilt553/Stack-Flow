@@ -24,16 +24,21 @@ class AnswerForm extends React.Component{
     }
 
     render(){
+        let formName;
+        if (this.props.formType === 'Post Your Answer'){
+            formName = 'Your Answer'
+        }else{
+            formName = 'Edit your answer'
+        }
 
         return(
-            <form onSubmit={this.handleSubmit}>
-                <label>Your Answer
-                    <textarea 
-                    cols="30" rows="10" 
-                    value={this.state.body}
-                    onChange={this.update("body")}
-                     />
-                </label>
+            <form className="ans-form" onSubmit={this.handleSubmit}>
+                <p className="your-ans">{formName}</p>
+                <textarea 
+                cols="30" rows="10" 
+                value={this.state.body}
+                onChange={this.update("body")}
+                />
                 <input type="submit" value={this.props.formType}/>
             </form>
         )
