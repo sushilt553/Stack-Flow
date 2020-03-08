@@ -1,6 +1,6 @@
 import {
     RECEIVE_ANSWER_ERRORS,
-    RECEIVE_ANSWER,
+    RECEIVE_ANSWER_AND_QUESTION,
     CLEAR_ANSWER_ERRORS
 } from '../actions/answer_stack_actions';
 
@@ -10,7 +10,7 @@ const AnswerErrorsReducer = (state = [], action) => {
     switch (action.type) {
         case RECEIVE_ANSWER_ERRORS:
             return action.errors;
-        case RECEIVE_ANSWER:
+        case RECEIVE_ANSWER_AND_QUESTION:
             return [];
         case CLEAR_ANSWER_ERRORS:
             return [];

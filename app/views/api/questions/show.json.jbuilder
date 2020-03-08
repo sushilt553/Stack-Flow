@@ -4,7 +4,16 @@ tags = []
 end
 
 author_name = User.find_by(id: @question.author_id).username
+json.question do
+    json.extract! @question, :id, :title, :body, :author_id, :answer_ids
+    json.set!('author_name', author_name)
+    json.set!('tags', tags.join(" "))
+end
 
-json.extract! @question, :id, :title, :body, :author_id, :answer_ids
-json.set!('author_name', author_name)
-json.set!('tags', tags.join(" "))
+json.answers do
+    @question.answers.each do |answer|
+        json.set!(answer.id) do
+            json.extract! answer, :id, :body, :question_id, :author_id
+        end
+    end
+end

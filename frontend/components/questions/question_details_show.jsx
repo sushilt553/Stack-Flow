@@ -3,6 +3,7 @@ import Sidebar from '../main/sidebar';
 import BlogPage from '../main/blog_page';
 import AnswerFormContainer from '../answers/answer_form_container';
 import {Link} from 'react-router-dom';
+import AnswerListItem from '../answers/answer__list_item';
 
 class QuestionDetailsShow extends React.Component{
 
@@ -25,6 +26,16 @@ class QuestionDetailsShow extends React.Component{
             return null;
         }
 
+        const answersCount = this.props.answersCount ? <p>{this.props.answersCount} Answers</p> : null;
+        // debugger;
+        const answersList = this.props.answers.map((answer) => 
+        <AnswerListItem 
+        key={answer.id}
+        answer={answer}
+        deleteAnswer={this.props.deleteAnswer}
+        sessionId={this.props.sessionId}
+         />)
+
         const buttons = (this.props.question.author_id === this.props.sessionId) ?
             <>
                 <button className="del-edit"><Link to={`/questions/${this.props.question.id}/edit`}>Edit</Link></button>
@@ -45,6 +56,10 @@ class QuestionDetailsShow extends React.Component{
                     {buttons}
                     <ul className="all-tags">
                         {tags}
+                    </ul>
+                    {answersCount}
+                    <ul>
+                        {answersList}
                     </ul>
                     <AnswerFormContainer questionId={this.props.question.id} />
                 </div>

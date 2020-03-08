@@ -1,6 +1,6 @@
 import * as AnswerStackAPIUtil from '../util/answer_stack_api_util';
 // export const RECEIVE_ALL_ANSWERS = 'RECEIVE_ALL_ANSWERS';
-export const RECEIVE_ANSWER = 'RECEIVE_ANSWER';
+export const RECEIVE_ANSWER_AND_QUESTION = 'RECEIVE_ANSWER_AND_QUESTION';
 export const REMOVE_ANSWER = 'REMOVE_ANSWER';
 export const RECEIVE_ANSWER_ERRORS = 'RECEIVE_ANSWER_ERRORS';
 export const CLEAR_ANSWER_ERRORS = 'CLEAR_ANSWER_ERRORS';
@@ -12,10 +12,11 @@ export const CLEAR_ANSWER_ERRORS = 'CLEAR_ANSWER_ERRORS';
 //     }
 // }
 
-export const receiveAnswer = (answer) => {
+export const receiveAnswerAndQuestion = (payload) => {
+    // debugger;
     return {
-        type: RECEIVE_ANSWER,
-        answer
+        type: RECEIVE_ANSWER_AND_QUESTION,
+        payload
     }
 }
 
@@ -47,19 +48,25 @@ export const receiveAnswerErrors = (errors) => {
 
 export const requestAnswer = answerId => dispatch => (
     AnswerStackAPIUtil.fetchAnswer(answerId)
-    .then(answer => dispatch(receiveAnswer(answer)))
+    .then(payload => dispatch(receiveAnswerAndQuestion(payload)))
     .fail(errors => dispatch(receiveAnswerErrors(errors.responseJSON)))
 )
 
 export const postAnswer = answer => dispatch => (
     AnswerStackAPIUtil.postAnswer(answer)
-    .then(answer => dispatch(receiveAnswer(answer)))
+    .then(payload => {
+        dispatch(receiveAnswerAndQuestion(payload))
+        return payload.question.id
+    })
     .fail(errors => dispatch(receiveAnswerErrors(errors.responseJSON)))
 )
 
 export const updateAnswer = answer => dispatch => (
     AnswerStackAPIUtil.updateAnswer(answer)
-    .then(answer => dispatch(receiveAnswer(answer)))
+    .then(payload => {
+        dispatch(receiveAnswerAndQuestion(payload))
+        return payload.question.id
+    })
     .fail(errors => dispatch(receiveAnswerErrors(errors.responseJSON)))
 )
 

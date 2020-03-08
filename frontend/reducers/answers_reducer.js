@@ -1,5 +1,5 @@
-import { RECEIVE_ALL_QUESTIONS_AND_ANSWERS } from '../actions/question_stack_actions';
-import { RECEIVE_ANSWER } from '../actions/answer_stack_actions';
+import { RECEIVE_ALL_QUESTIONS_AND_ANSWERS, RECEIVE_QUESTION_AND_ANSWERS } from '../actions/question_stack_actions';
+import { RECEIVE_ANSWER_AND_QUESTION } from '../actions/answer_stack_actions';
 
 const AnswersReducer = (state = {}, action) => {
     Object.freeze(state);
@@ -8,9 +8,11 @@ const AnswersReducer = (state = {}, action) => {
     switch (action.type) {
         case RECEIVE_ALL_QUESTIONS_AND_ANSWERS:
             return Object.assign(newState, action.payload.answers);
-        case RECEIVE_ANSWER:
+        case RECEIVE_QUESTION_AND_ANSWERS:
+            return Object.assign(newState, action.payload.answers)
+        case RECEIVE_ANSWER_AND_QUESTION:
             return Object.assign(newState, {
-                [action.answer.id]: action.answer
+                [action.payload.answer.id]: action.payload.answer
             });
         default:
             return state;

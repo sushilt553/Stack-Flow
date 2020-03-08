@@ -5,6 +5,7 @@ import SignupFormContainer from '../components/session/signup_form_container';
 import LoginFormContainer from '../components/session/login_form_container';
 import QuestionFormContainer from './questions/question_form_container';
 import EditQuestionFormContainer from './questions/edit_question_form_container';
+import EditAnswerFormContainer from './answers/edit_answer_form_container';
 import NavBarContainer from './main/nav_bar_container';
 import HomePage from '../components/main/home_page';
 import SplashPage from '../components/main/splash_page';
@@ -17,8 +18,9 @@ const App = () => {
         <Switch>
             <ProtectedRoute path={`/home`} component={HomePage} />
             <ProtectedRoute path={`/questions/new`} component={QuestionFormContainer} />
-            <ProtectedRoute path={`/questions/:questionId/edit`} component={EditQuestionFormContainer} />
             <ProtectedRoute path={`/questions/:questionId`} component={QuestionDetailsShowContainer}/>
+            <ProtectedRoute path={`/questions/:questionId/edit`} component={EditQuestionFormContainer} />
+            <ProtectedRoute path={`/answers/:answerId/edit`} component={EditAnswerFormContainer} />
             <AuthRoute path={`/signup`} component={SignupFormContainer} />
             <AuthRoute path={`/login`} component={LoginFormContainer} />
             <AuthRoute path={`/`} component={SplashPage} />
