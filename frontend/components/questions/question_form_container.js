@@ -14,7 +14,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return {
         submitQuestion: (question) => dispatch(postQuestion(question)),
-        clearQuestionErrors: () => dispatch(clearQuestionErrors)
+        clearQuestionErrors: () => dispatch(clearQuestionErrors())
     }
 }
 

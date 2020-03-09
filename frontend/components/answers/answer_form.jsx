@@ -23,6 +23,10 @@ class AnswerForm extends React.Component{
         this.setState({body: ""});
     }
 
+    componentWillUnmount(){
+        this.props.clearAnswerErrors();
+    }
+
     render(){
         let formName;
         if (this.props.formType === 'Post Your Answer'){
@@ -34,6 +38,7 @@ class AnswerForm extends React.Component{
         return(
             <form className="ans-form" onSubmit={this.handleSubmit}>
                 <p className="your-ans">{formName}</p>
+                <p className="ans-errors">{this.props.errors}</p>
                 <textarea 
                 cols="30" rows="10" 
                 value={this.state.body}

@@ -55,7 +55,7 @@ class NavBar extends React.Component {
                         <input type="text" placeholder="Search..." />
                     </nav>
                     <i className="fas fa-user">
-                        <span>Welcome {this.props.user.username}</span>
+                        <span>  Welcome {this.props.user.username}!</span>
                     </i>
                     
                     <ul>

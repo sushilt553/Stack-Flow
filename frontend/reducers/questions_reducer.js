@@ -11,7 +11,7 @@ import { RECEIVE_QUESTION_VOTE } from '../actions/vote_stack_actions';
 const QuestionsReducer = (state = {}, action) => {
     Object.freeze(state);
     let newState = Object.assign({}, state);
-    debugger;
+    // debugger;
     switch (action.type) {
         case RECEIVE_ALL_QUESTIONS_AND_ANSWERS:
             return Object.assign(newState, action.payload.questions);
