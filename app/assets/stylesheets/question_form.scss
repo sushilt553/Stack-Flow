@@ -85,6 +85,7 @@ div>.main-section {
 .main-section>.first-par>.first {
     border-bottom: 1px solid #e4e6e8;
     background-color: #fafafb;
+    padding-top: 12px;
     color: #6a737c;
 }
 
@@ -108,8 +109,9 @@ div>.main-section {
 .main-section .lis {
     font-weight: normal;
     list-style: inside;
-    position: relative;
-    left: -50px;
+    margin-left: 20px;
+    // position: relative;
+    // left: -30px;
     font-size: 15px;
     margin: 15px;
 }

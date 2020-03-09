@@ -3,6 +3,11 @@ import { Link } from 'react-router-dom';
 
 const AnswerListItem = (props) => {
     let EDButtons;
+
+    if (!props.answer){
+        return null;
+    }
+
     if (props.answer.author_id === props.sessionId){
         EDButtons = 
             <>
@@ -12,16 +17,21 @@ const AnswerListItem = (props) => {
             </>
     }
     return (
-        <li className="answer-list-item">
-            
-            <p>{props.answer.body}</p>
+        <li className="answer-list-item"> 
+            <div className="votes-icons-container">
+                <div className="votes-icons">
+                    <i className="fas fa-caret-up"></i>
+                    <p>{props.answer.votes_count}</p>
+                    <i className="fas fa-caret-down"></i>
+                </div>
+                <p className='ans-body'>{props.answer.body}</p>
+            </div>
             <section className="ed-p">
                 <div className="ed-btns">
                     {EDButtons}
                 </div>
                 <p className="posted-by">Posted by {props.answer.author_name}</p>
-            </section>
-
+            </section>  
         </li>
     )
 }

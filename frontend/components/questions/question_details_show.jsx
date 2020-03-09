@@ -28,9 +28,9 @@ class QuestionDetailsShow extends React.Component{
 
         const answersCount = this.props.answersCount ? <p>{this.props.answersCount} Answers</p> : null;
         // debugger;
-        const answersList = this.props.answers.map((answer) => 
+        const answersList = this.props.answers.map((answer,idx) => 
         <AnswerListItem 
-        key={answer.id}
+        key={idx}
         answer={answer}
         deleteAnswer={this.props.deleteAnswer}
         sessionId={this.props.sessionId}
@@ -58,29 +58,38 @@ class QuestionDetailsShow extends React.Component{
                         <button className="ask-button question-list"><Link to='/questions/new'>Ask Question</Link></button>
                     </div>
                     <div className="question-show-page">
-                        <div className="votes-icons">
-                            <i className="fas fa-caret-up"></i>
-                            <p>{this.props.question.votes_count}</p>
-                            <i className="fas fa-caret-down"></i>
-                        </div>
-
-                        <div className="body-div">
-                            <p className="question-body">{this.props.question.body}</p>
-    
-                            {buttons}
-
-                            <ul className="all-tags">
-                                <div className="tags-in">
-                                 {tags}
+                        <div className="min-question-show-page">
+                            <div>
+                                <div className="votes-icons-container">
+                                    <div className="votes-icons">
+                                        <i className="fas fa-caret-up"></i>
+                                        <p>{this.props.question.votes_count}</p>
+                                        <i className="fas fa-caret-down"></i>
+                                    </div>
+                                    <p className="question-body">{this.props.question.body}</p>
                                 </div>
-                                <p className="posted-by">Posted by {this.props.question.author_name}</p>
-                            </ul>
-                            <div className="answer-count">{answersCount}</div>
-                            <br/>
-                            <ul className="answer-list">
-                                {answersList}
-                            </ul>
-                            <AnswerFormContainer questionId={this.props.question.id} />
+                                <div>
+
+                                    {buttons}
+
+                                    <ul className="all-tags">
+                                        <div className="tags-in">
+                                            {tags}
+                                        </div>
+                                        <p className="posted-by">Posted by {this.props.question.author_name}</p>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div className="body-div">
+                                
+                                <div className="answer-count">{answersCount}</div>
+                                <br/>
+                                <ul className="answer-list">
+                                    {answersList}
+                                </ul>
+                                <AnswerFormContainer questionId={this.props.question.id} />
+                            </div>
                         </div>
                         <BlogPage />
                     </div>

@@ -6,21 +6,24 @@
 .answer-list {
     display: flex;
     flex-direction: column;
+    position: relative;
+    left: -1%;
 }
 
 .answer-list-item {
+    display: flex;
     margin: 5px 0;
+    flex-direction: column;
     border-bottom: 1px solid #e4e6e8;
     padding-bottom: 10px;
 }
 
-.answer-list-item {
+.ans-body {
     word-wrap: break-word;
+    // width: 90%;
     font-size: 15px;
-    // line-height: 30px;
-}
-
-.answer-list-item>p {
+    width: 100%;
+    // display: flex;
     line-height: 30px;
 }
 
@@ -60,6 +63,8 @@ textarea {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-left: 10px;
+    // width: 63%;
 }
 
-.ed-btns {}
+// .ed-btns {}
