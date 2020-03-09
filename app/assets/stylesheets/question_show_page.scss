@@ -26,13 +26,31 @@
     }
     
     .question-show-page {
-        margin-left: 20px;
+        margin-left: 8px;
         display: flex;
+        width: 100%;
         // flex-direction: column;
     }
     
-    .question-show-page>div {
-        width: 78%;
+    .votes-icons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 5%;
+    }
+    
+    .votes-icons i {
+        font-size: 50px;
+        color: #bbc0c4;
+    }
+    
+    .votes-icons p {
+        font-size: 30px;
+        color: #bbc0c4;
+    }
+    
+    .question-show-page>.body-div {
+        width: 70%
     }
     
     .question-show-page .question-body {

@@ -58,7 +58,13 @@ class QuestionDetailsShow extends React.Component{
                         <button className="ask-button question-list"><Link to='/questions/new'>Ask Question</Link></button>
                     </div>
                     <div className="question-show-page">
-                        <div>
+                        <div className="votes-icons">
+                            <i className="fas fa-caret-up"></i>
+                            <p>{this.props.question.votes_count}</p>
+                            <i className="fas fa-caret-down"></i>
+                        </div>
+
+                        <div className="body-div">
                             <p className="question-body">{this.props.question.body}</p>
     
                             {buttons}
