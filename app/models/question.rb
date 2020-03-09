@@ -32,6 +32,8 @@ class Question < ApplicationRecord
     has_many :tags,
         through: :taggings
 
+    has_many :votes, as: :votable
+
     def self.create_tags(tags_arr, question)
         tags_arr.each do |tag|
             new_tag = Tag.find_by(name: tag) || Tag.create!(name: tag)

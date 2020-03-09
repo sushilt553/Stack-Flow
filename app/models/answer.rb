@@ -26,4 +26,6 @@ class Answer < ApplicationRecord
     has_one :poster,
         through: :question,
         source: :author
+
+    has_many :votes, as: :votable
 end
