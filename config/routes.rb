@@ -6,16 +6,18 @@ Rails.application.routes.draw do
 
     resources :questions do 
       resources :answers, only: [:create]
+      resources :votes, only: [:create]
     end
 
-    resources :answers, only: [:show, :edit, :update, :destroy]
+    resources :answers, only: [:show, :edit, :update, :destroy] do
+      resources :votes, only: [:create]
+    end
 
     resources :tags, only: [:index]
 
     resources :users, only: [:create]
 
     resource :session, only: [:create, :destroy]
-
   end
   
 end
