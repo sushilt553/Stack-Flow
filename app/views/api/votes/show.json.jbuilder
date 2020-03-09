@@ -4,7 +4,7 @@ def votes_count(model)
     return (pos - neg)
 end
 
-obj = null
+obj = ""
 
 if @vote.votable_type === 'Question'
     obj = Question.find_by(id: @vote.votable_id)

@@ -1,6 +1,7 @@
 import { RECEIVE_ALL_QUESTIONS_AND_ANSWERS, RECEIVE_QUESTION_AND_ANSWERS } from '../actions/question_stack_actions';
 import { REMOVE_ANSWER } from '../actions/answer_stack_actions';
 import { RECEIVE_ANSWER_AND_QUESTION } from '../actions/answer_stack_actions';
+import { RECEIVE_ANSWER_VOTE } from '../actions/vote_stack_actions';
 
 const AnswersReducer = (state = {}, action) => {
     Object.freeze(state);
@@ -17,6 +18,9 @@ const AnswersReducer = (state = {}, action) => {
             });
         case REMOVE_ANSWER:
             delete newState[action.answerId];
+            return newState;
+        case RECEIVE_ANSWER_VOTE:
+            newState[action.vote.answer_id].votes_count = action.vote.votes_count
             return newState;
         default:
             return state;

@@ -1,13 +1,20 @@
 class Api::VotesController < ApplicationController
 
     def create
-        @vote = Vote.new(vote_params)
-        @vote.voter_id = current_user.id
+        debugger
+        @vote = Vote.find_by(voter_id: current_user.id, votable_type: params[:vote][:votable_type], votable_id: params[:vote][:votable_id])
 
-        if @vote.save
+        if @vote
+            @vote.update_attributes(vote_params)
             render :show
         else
-            render json: ['Cannot vote multiple times'], status: 422
+            @vote = Vote.new(vote_params)
+            @vote.voter_id = current_user.id
+            if @vote.save
+                render :show
+            else
+                render json: @vote.errors.full_messages, status: 422
+            end
         end
     end
 
