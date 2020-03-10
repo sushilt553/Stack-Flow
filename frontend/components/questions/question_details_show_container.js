@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import QuestionDetailsShow from './question_details_show';
-import { requestQuestion, deleteQuestion } from '../../actions/question_stack_actions';
+import { requestQuestion, deleteQuestion, requestAllQuestions } from '../../actions/question_stack_actions';
 import { find_answers } from '../../selectors/selectors';
 import { deleteAnswer } from '../../actions/answer_stack_actions';
 import { questionVote, answerVote } from '../../actions/vote_stack_actions';
@@ -30,7 +30,8 @@ const mapDispatchToProps = dispatch => {
         deleteQuestion: (questionId) => dispatch(deleteQuestion(questionId)),
         deleteAnswer: (answerId) => dispatch(deleteAnswer(answerId)),
         questionVote: (vote) => dispatch(questionVote(vote)),
-        answerVote: (vote) => dispatch(answerVote(vote))
+        answerVote: (vote) => dispatch(answerVote(vote)),
+        requestAllQuestions: () => dispatch(requestAllQuestions())
     }
 }
 

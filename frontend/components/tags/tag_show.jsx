@@ -18,6 +18,7 @@ class TagShow extends React.Component{
 
     componentDidMount(){
         this.props.requestTag(this.props.match.params.tagId)
+        this.props.requestAllQuestions();
     }
 
     render(){

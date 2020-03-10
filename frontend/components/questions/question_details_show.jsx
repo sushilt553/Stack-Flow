@@ -18,6 +18,7 @@ class QuestionDetailsShow extends React.Component{
 
     componentDidMount(){
         this.props.requestQuestion(this.props.match.params.questionId)
+        this.props.requestAllQuestions()
     }
 
     render(){

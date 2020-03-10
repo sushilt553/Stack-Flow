@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import TagShow from './tag_show';
 import { requestTag } from '../../actions/tags_stack_actions';
+import { requestAllQuestions } from '../../actions/question_stack_actions';
 
 const mapStateToProps = (state, ownProps) => {
     const id = ownProps.match.params.tagId;
@@ -25,7 +26,8 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        requestTag: (tagId) => dispatch(requestTag(tagId))
+        requestTag: (tagId) => dispatch(requestTag(tagId)),
+        requestAllQuestions: () => dispatch(requestAllQuestions())
     }
 }
 
