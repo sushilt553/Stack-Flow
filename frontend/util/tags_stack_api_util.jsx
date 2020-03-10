@@ -4,3 +4,10 @@ export const fetchAllTags = () => {
         url: `/api/tags`
     })
 }
+
+export const fetchTag = (tagId) => {
+    return $.ajax({
+        method: 'get',
+        url: `/api/tags/${tagId}`
+    })
+}

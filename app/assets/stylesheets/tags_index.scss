@@ -1,0 +1,29 @@
+.all-tags-index {
+    display: flex;
+    justify-content: space-between;
+    background-color: #ffffff;
+}
+
+.all-tags-index ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.all-tags-index ul li {
+    font-size: 18px;
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid transparent;
+    background-color: #e2ecf4;
+    border-radius: 6px;
+    color: #39739e;
+}
+
+.all-tags-index ul li:hover {
+    background-color: #d1e5f2;
+    color: #2c5777;
+}
+
+.div-sidebar {
+    width: 6.78%;
+}

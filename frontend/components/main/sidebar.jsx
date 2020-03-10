@@ -7,7 +7,7 @@ const Sidebar = () => {
             <NavLink className="link-home" to={`/home`}>Home</NavLink>
             <p>PUBLIC</p>
             <ul className="tag-lists">
-                <NavLink to={`/tags`}><li>Tags</li></NavLink>
+                <li><NavLink to={`/tags`}>Tags</NavLink></li>
                 <li>Users</li>
                 <li>Jobs</li>
             </ul>

@@ -1,5 +1,6 @@
 import React from 'react';
-
+import Sidebar from '../main/sidebar';
+import {Link} from 'react-router-dom';
 
 class TagsIndex extends React.Component{
     componentDidMount(){
@@ -7,12 +8,15 @@ class TagsIndex extends React.Component{
     }
 
     render(){
-        debugger
-        const tags = this.props.allTags.map((tag) => <li key={tag.id}>{tag.name}</li>)
+        // debugger
+        const tags = this.props.allTags.map((tag) => <Link key={tag.id} to={`/tags/${tag.id}`}><li>{tag.name}</li></Link>)
         return (
-            <ul>
-                {tags}
-            </ul>
+            <div className="all-tags-index">
+                <Sidebar />
+                <ul>
+                    {tags}
+                </ul>
+            </div>
         ) 
     }
 }

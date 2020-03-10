@@ -11,6 +11,7 @@ import HomePage from '../components/main/home_page';
 import SplashPage from '../components/main/splash_page';
 import QuestionDetailsShowContainer from './questions/question_details_show_container';
 import TagsIndexContainer from './tags/tags_index_container';
+import TagShowContainer from './tags/tags_show_container';
 
 const App = () => {
     return (
@@ -18,6 +19,7 @@ const App = () => {
             <NavBarContainer />    
         <Switch>
             <ProtectedRoute path={`/home`} component={HomePage} />
+            <ProtectedRoute path={`/tags/:tagId`} component={TagShowContainer} />
             <ProtectedRoute path={`/tags`} component={TagsIndexContainer} />
             <ProtectedRoute path={`/questions/new`} component={QuestionFormContainer} />
             <ProtectedRoute path={`/questions/:questionId/edit`} component={EditQuestionFormContainer} />

@@ -3,7 +3,7 @@ import TagsIndex from './tags_index';
 import { requestAllTags } from '../../actions/tags_stack_actions';
 
 const mapStateToProps = state => {
-    debugger;
+    // debugger;
     return {
         allTags: Object.values(state.entities.allTags)
     }
