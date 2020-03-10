@@ -4,7 +4,7 @@ import { requestQuestion, updateQuestion, clearQuestionErrors } from '../../acti
 
 const mapStateToProps = (state, ownProps) => {
     const questionId = ownProps.match.params.questionId;
-    debugger;
+    // debugger;
     const question = state.entities.questions[questionId]
     return {
         question: question,

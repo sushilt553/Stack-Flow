@@ -16,6 +16,15 @@ def votes_count(model)
     return (pos - neg)
 end
 
+def find_top_questions
+    Question
+    .select(:id, :title, 'COUNT(question_id) as answers_count')
+    .joins(:answers)
+    .group(:id)
+    .order('answers_count DESC')
+    .limit(5)
+end
+
 json.questions do
     @questions.each do |question|
         json.set!(question.id) do 
@@ -39,3 +48,5 @@ json.answers do
         end
     end
 end
+
+json.set!('top_questions', find_top_questions)

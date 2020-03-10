@@ -1,6 +1,13 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
-const BlogPage = () => {
+const BlogPage = (props) => {
+    let topQuestions;
+    if (props.topQuestions){
+        topQuestions = props.topQuestions.map((topQuestion, idx) => <Link key={idx} to={`/questions/${topQuestion.id}`}><li>{topQuestion.title}</li></Link>)
+    }else{
+        return null;
+    }
     return (
         <section className="side-page">
             <article className="blog-post">
@@ -14,8 +21,9 @@ const BlogPage = () => {
                 <li>Why is the mission of Meta, as a community?</li>
             </article>
 
-            <div>
+            <div className="top-hot-questions">
                 <h3 className="hot-questions">Hot Network Questions</h3>
+                {topQuestions}
             </div>
 
         </section>

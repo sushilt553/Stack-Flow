@@ -46,4 +46,8 @@ class Question < ApplicationRecord
             tag.destroy
         end
     end
+
+    def self.find_top_questions
+
+    end
 end

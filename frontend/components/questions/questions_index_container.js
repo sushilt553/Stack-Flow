@@ -6,7 +6,8 @@ const mapStateToProps = (state) => {
     // debugger;
     return {
         questions: Object.values(state.entities.questions),
-        // sessionId: state.session.id
+        topQuestions: state.entities.top_questions
+            // sessionId: state.session.id
     }
 }
 

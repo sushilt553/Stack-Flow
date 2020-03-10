@@ -2,7 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import Sidebar from '../main/sidebar';
 import QuestionIndexContainer from '../questions/questions_index_container';
-import BlogPage from './blog_page';
+import BlogPageContainer from './blog_page_container';
 
 class HomePage extends React.Component{
 
@@ -18,7 +18,7 @@ class HomePage extends React.Component{
                         </div>
                         <div className="question-index"><QuestionIndexContainer /></div>
                     </section>
-                    <BlogPage />
+                    <BlogPageContainer/>
                 </section>
             </div>
         )
