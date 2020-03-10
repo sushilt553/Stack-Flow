@@ -33,6 +33,7 @@ class QuestionDetailsShow extends React.Component{
         key={idx}
         answer={answer}
         deleteAnswer={this.props.deleteAnswer}
+        answerVote={this.props.answerVote}
         sessionId={this.props.sessionId}
          />)
 
@@ -62,9 +63,9 @@ class QuestionDetailsShow extends React.Component{
                             <div>
                                 <div className="votes-icons-container">
                                     <div className="votes-icons">
-                                        <i className="fas fa-caret-up"></i>
+                                        <button onClick={() => this.props.questionVote({votable_type: 'Question', votable_id: this.props.question.id, status: true})}><i className="fas fa-caret-up"></i></button>
                                         <p>{this.props.question.votes_count}</p>
-                                        <i className="fas fa-caret-down"></i>
+                                        <button onClick={() => this.props.questionVote({ votable_type: 'Question', votable_id: this.props.question.id, status: false })}><i className="fas fa-caret-down"></i></button>
                                     </div>
                                     <p className="question-body">{this.props.question.body}</p>
                                 </div>

@@ -26,10 +26,10 @@ const QuestionsReducer = (state = {}, action) => {
         case REMOVE_QUESTION:
             delete newState[action.questionId];
             return newState;
-        case REMOVE_ANSWER:
-            const index = newState[action.questionId].answer_ids.indexOf(action.questionId);
-            newState[action.questionId].answer_ids.splice(index, 1)
-            return newState;
+            // case REMOVE_ANSWER:
+            //     const index = newState[action.questionId].answer_ids.indexOf(action.questionId);
+            //     newState[action.questionId].answer_ids.splice(index, 1)
+            //     return newState;
         case RECEIVE_QUESTION_VOTE:
             newState[action.vote.question_id].votes_count = action.vote.votes_count
             return newState;

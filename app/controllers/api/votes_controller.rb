@@ -1,7 +1,7 @@
 class Api::VotesController < ApplicationController
 
     def create
-        debugger
+        # debugger
         @vote = Vote.find_by(voter_id: current_user.id, votable_type: params[:vote][:votable_type], votable_id: params[:vote][:votable_id])
 
         if @vote

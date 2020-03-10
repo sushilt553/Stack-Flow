@@ -20,9 +20,9 @@ const AnswerListItem = (props) => {
         <li className="answer-list-item"> 
             <div className="votes-icons-container">
                 <div className="votes-icons">
-                    <i className="fas fa-caret-up"></i>
+                    <button onClick={() => props.answerVote({votable_type: 'Answer', votable_id: props.answer.id, status: true})}><i className="fas fa-caret-up"></i></button>
                     <p>{props.answer.votes_count}</p>
-                    <i className="fas fa-caret-down"></i>
+                    <button onClick={() => props.answerVote({ votable_type: 'Answer', votable_id: props.answer.id, status: false })}><i className="fas fa-caret-down"></i></button>
                 </div>
                 <p className='ans-body'>{props.answer.body}</p>
             </div>
