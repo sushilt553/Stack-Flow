@@ -34,9 +34,23 @@ class SessionForm extends React.Component{
                 />
             </label>
             : null;
-   
-        const errors = this.props.errors.map((error) => 
-            <li className='login-error'>{error}</li>)
+        
+        let usernameError;
+        let passwordError;
+        let sessionError;
+        let emailError;
+
+        this.props.errors.forEach((error) => {
+            if(error.includes('Username/Password')){
+                sessionError = error
+            }else if (error.includes('Username')){
+                usernameError = error;
+            }else if (error.includes('Password')){
+                passwordError = error
+            }else if (error.includes('Email')){
+                emailError = error
+            }
+        })
     
         const demoUser = { username: 'guest', password: 'hunter12' };
 
@@ -55,14 +69,15 @@ class SessionForm extends React.Component{
 
         return (
             <>
-            <div className="login-errors">
+            {/* <div className="login-errors">
                 {errors}
-            </div>
+            </div> */}
             <section className="form-section">
                 <div className='form'>
                     <Link to={`/`}>
                         <img className="img-sign-logo" src={window.logo} />
                     </Link>
+                    <p className='session-error'>{sessionError}</p>
                     <form className='form-page' onSubmit={this.handleSubmit}>
                         <label>Username
                             <br/>
@@ -72,6 +87,7 @@ class SessionForm extends React.Component{
                             onChange={this.update('username')}
                             />
                         </label>
+                        <p className='username-error'>{usernameError}</p>
                         <label>Password
                             <br/>
                             <input 
@@ -80,7 +96,9 @@ class SessionForm extends React.Component{
                             onChange={this.update('password')}
                             />
                         </label>
+                        <p className='password-error'>{passwordError}</p>
                         {email}
+                        <p className='email-error'>{emailError}</p>
                         <input type="submit" value={this.props.formType}/>
                     </form>
                     {link}

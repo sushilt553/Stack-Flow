@@ -5,8 +5,11 @@ const QuestionIndexItem = (props) => {
     // debugger;
     const ansCount = props.question.answer_ids.length
     const votesCount = props.question.votes_count
-    const tagsArr = props.question.tags.split(" ")
-    const tags = tagsArr.map((tag, idx) => <li className="tag-list" key={idx} >{tag}</li>);
+    
+    const tags = props.question.full_tags.map((tag) => <Link key={tag.id} to={`/tags/${tag.id}`}><li className="tag-list">{tag.name}</li></Link>)
+
+    // const tagsArr = props.question.tags.split(" ")
+    // const tags = tagsArr.map((tag, idx) => <li className="tag-list" key={idx} >{tag}</li>);
     return (
         <li className="single-question" key={props.question.id}>
             <section className="votes-ans-count">

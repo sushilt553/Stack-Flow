@@ -1,6 +1,6 @@
 import React from 'react';
 import Sidebar from '../main/sidebar';
-import BlogPage from '../main/blog_page';
+import BlogPageContainer from '../main/blog_page_container';
 import AnswerFormContainer from '../answers/answer_form_container';
 import {Link} from 'react-router-dom';
 import AnswerListItem from '../answers/answer__list_item';
@@ -46,9 +46,11 @@ class QuestionDetailsShow extends React.Component{
             </>
             :
             null;
+
+        const tags = this.props.question.full_tags.map((tag) => <Link key={tag.id} to={`/tags/${tag.id}`}><li className="tag-list">{tag.name}</li></Link>)
         // debugger;
-        const tagsArr = this.props.question.tags.split(" ")
-        const tags = tagsArr.map((tag, idx) => <li className="tag-list" key={idx} >{tag}</li>);
+        // const tagsArr = this.props.question.tags.split(" ")
+        // const tags = tagsArr.map((tag, idx) => <li className="tag-list" key={idx} >{tag}</li>);
 
         return(
             <section className="main-show-page">
@@ -92,7 +94,7 @@ class QuestionDetailsShow extends React.Component{
                                 <AnswerFormContainer questionId={this.props.question.id} />
                             </div>
                         </div>
-                        <BlogPage />
+                        <BlogPageContainer />
                     </div>
                 </section>
             </section>

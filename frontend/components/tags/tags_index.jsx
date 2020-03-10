@@ -13,7 +13,7 @@ class TagsIndex extends React.Component{
         return (
             <div className="all-tags-index">
                 <Sidebar />
-                <ul>
+                <ul className="tags-list-index">
                     {tags}
                 </ul>
             </div>

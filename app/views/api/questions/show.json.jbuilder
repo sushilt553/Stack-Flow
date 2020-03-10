@@ -14,6 +14,7 @@ json.question do
     json.extract! @question, :id, :title, :body, :author_id, :answer_ids
     json.set!('author_name', author_name)
     json.set!('tags', tags.join(" "))
+    json.set!('full_tags', @question.tags)
     json.set!('votes_count', votes_count(@question))
 end
 

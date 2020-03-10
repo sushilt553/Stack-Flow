@@ -1,15 +1,16 @@
 .all-tags-index {
     display: flex;
     justify-content: space-between;
+    // width: 100%;
     background-color: #ffffff;
 }
 
-.all-tags-index ul {
+.all-tags-index .tags-list-index {
     display: flex;
     flex-wrap: wrap;
 }
 
-.all-tags-index ul li {
+.all-tags-index .tags-list-index li {
     font-size: 18px;
     padding: 10px;
     margin: 10px;
@@ -19,7 +20,7 @@
     color: #39739e;
 }
 
-.all-tags-index ul li:hover {
+.all-tags-index .tags-list-index li:hover {
     background-color: #d1e5f2;
     color: #2c5777;
 }

@@ -22,6 +22,7 @@ json.question do
     author_name = User.find_by(id: question.author_id).username
     json.extract! question, :id, :title, :body, :author_id, :answer_ids
     json.set!("tags", tags.join(" "))
+    json.set!('full_tags', question.tags)
     json.set!("author_name", author_name)
     json.set!("votes_count", votes_count(question))
 end
