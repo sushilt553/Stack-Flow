@@ -14,10 +14,16 @@
     font-size: 18px;
     padding: 10px;
     margin: 10px;
+    text-align: center;
     border: 1px solid transparent;
     background-color: #e2ecf4;
     border-radius: 6px;
     color: #39739e;
+}
+
+.all-tags-index .tags-list-index li p {
+    padding-top: 10px;
+    font-size: 13px;
 }
 
 .all-tags-index .tags-list-index li:hover {
@@ -27,4 +33,8 @@
 
 .div-sidebar {
     width: 6.78%;
+}
+
+.tags-list-index {
+    width: 93.22%
 }

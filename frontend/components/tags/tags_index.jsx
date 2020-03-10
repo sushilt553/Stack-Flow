@@ -9,7 +9,14 @@ class TagsIndex extends React.Component{
 
     render(){
         // debugger
-        const tags = this.props.allTags.map((tag) => <Link key={tag.id} to={`/tags/${tag.id}`}><li>{tag.name}</li></Link>)
+        const tags = this.props.allTags.map((tag) =>
+         <Link key={tag.id} to={`/tags/${tag.id}`}>
+             <li>
+                 {tag.name}
+                 <br/>
+                <p>{tag.questions_count} questions</p>
+             </li>
+        </Link>)
         return (
             <div className="all-tags-index">
                 <Sidebar />
