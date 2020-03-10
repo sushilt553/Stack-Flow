@@ -7,6 +7,15 @@ import QuestionIndexItem from '../questions/question_index_item';
 
 class TagShow extends React.Component{
 
+    componentDidUpdate(prevProps) {
+        const currentId = this.props.match.params.tagId;
+        const prevId = prevProps.match.params.tagId;
+
+        if (currentId != prevId) {
+            this.props.requestTag(currentId)
+        }
+    }
+
     componentDidMount(){
         this.props.requestTag(this.props.match.params.tagId)
     }
