@@ -21,6 +21,7 @@ class AnswerForm extends React.Component{
         this.props.submitForm(this.state)
         .then((id)=> this.props.history.push(`/questions/${id}`))
         this.setState({body: ""});
+        this.props.requestAllQuestions();
     }
 
     componentWillUnmount(){

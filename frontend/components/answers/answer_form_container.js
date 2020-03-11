@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import AnswerForm from './answer_form';
 import { postAnswer, clearAnswerErrors } from '../../actions/answer_stack_actions';
+import { requestAllQuestions } from '../../actions/question_stack_actions';
 
 const mapStateToProps = (state, ownProps) => {
     return {
@@ -13,7 +14,8 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = dispatch => {
     return {
         submitForm: (answer) => dispatch(postAnswer(answer)),
-        clearAnswerErrors: () => dispatch(clearAnswerErrors())
+        clearAnswerErrors: () => dispatch(clearAnswerErrors()),
+        requestAllQuestions: () => dispatch(requestAllQuestions())
     }
 }
 
