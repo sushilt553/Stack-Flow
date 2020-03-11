@@ -2,6 +2,21 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 class NavBar extends React.Component {
+    constructor(props){
+        super(props);
+        this.state = {tags: ""}
+        this.keyPressed = this.keyPressed.bind(this);
+    }
+
+    updateField(field){
+        return (e) => this.setState({[field]: e.target.value})
+    }
+
+    keyPressed(e){
+        if (e.key === "Enter"){
+            console.log(this.state)
+        }
+    }
 
     render() {
 
@@ -53,7 +68,7 @@ class NavBar extends React.Component {
 
                     <nav className='search-bar'>
                         <img src={window.glass} />
-                        <input type="text" placeholder="Search..." />
+                        <input onKeyPress={this.keyPressed} value={this.state.tags} type="text" placeholder="Search..." onChange={this.updateField('tags')}/>
                     </nav>
                     <i className="fas fa-user">
                         <span>  Welcome {this.props.user.username}!</span>
