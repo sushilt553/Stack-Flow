@@ -12,12 +12,14 @@ import SplashPage from '../components/main/splash_page';
 import QuestionDetailsShowContainer from './questions/question_details_show_container';
 import TagsIndexContainer from './tags/tags_index_container';
 import TagShowContainer from './tags/tags_show_container';
+import SearchContainer from '../components/search/search_container';
 
 const App = () => {
     return (
         <>
             <NavBarContainer />    
         <Switch>
+            <ProtectedRoute path={`/search/:tags`} component={SearchContainer}/>
             <ProtectedRoute path={`/home`} component={HomePage} />
             <ProtectedRoute path={`/tags/:tagId`} component={TagShowContainer} />
             <ProtectedRoute path={`/tags`} component={TagsIndexContainer} />

@@ -13,6 +13,8 @@ Rails.application.routes.draw do
       resources :votes, only: [:create]
     end
 
+    get 'search', to: 'search#search'
+
     resources :tags, only: [:index, :show]
 
     resources :users, only: [:create]

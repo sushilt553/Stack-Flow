@@ -5,6 +5,7 @@ import AnswersReducer from './answers_reducer';
 import TopQuestionsReducer from './top_questions_reducer';
 import TagsReducer from './tags_reducer';
 import TagQuestionsReducer from './tag_questions_reducer';
+import SearchReducer from './search_questions_reducer';
 
 const entitiesReducer = combineReducers({
     users: UsersReducer,
@@ -12,7 +13,8 @@ const entitiesReducer = combineReducers({
     answers: AnswersReducer,
     topQuestions: TopQuestionsReducer,
     allTags: TagsReducer,
-    tagQuestions: TagQuestionsReducer
+    tagQuestions: TagQuestionsReducer,
+    searchQuestions: SearchReducer
 })
 
 export default entitiesReducer;

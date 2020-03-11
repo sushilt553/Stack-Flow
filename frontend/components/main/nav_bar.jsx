@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
 class NavBar extends React.Component {
     constructor(props){
@@ -14,7 +14,7 @@ class NavBar extends React.Component {
 
     keyPressed(e){
         if (e.key === "Enter"){
-            console.log(this.state)
+            this.props.history.push(`/search/${this.state.tags}`)
         }
     }
 
@@ -91,4 +91,4 @@ class NavBar extends React.Component {
     }
 }
 
-export default NavBar;
+export default withRouter(NavBar);
