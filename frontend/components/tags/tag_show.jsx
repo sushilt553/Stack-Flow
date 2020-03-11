@@ -29,6 +29,7 @@ class TagShow extends React.Component{
         const questions = this.props.questionsObj.map((question) =>
             <QuestionIndexItem key={question.id}
                 question={question}
+                updateQuestion={this.props.updateQuestion}
             />
         )
 

@@ -11,7 +11,7 @@ end
 
 author_name = User.find_by(id: @question.author_id).username
 json.question do
-    json.extract! @question, :id, :title, :body, :author_id, :answer_ids
+    json.extract! @question, :id, :title, :body, :author_id, :views, :answer_ids
     json.set!('author_name', author_name)
     json.set!('tags', tags.join(" "))
     json.set!('full_tags', @question.tags)

@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import QuestionsIndex from './questions_index';
-import { requestAllQuestions } from '../../actions/question_stack_actions';
+import { requestAllQuestions, updateQuestion } from '../../actions/question_stack_actions';
 
 const mapStateToProps = (state) => {
     // debugger;
@@ -14,7 +14,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = dispatch => {
     return {
         // deleteQuestion: (questionId) => dispatch(deleteQuestion(questionId)),
-        requestAllQuestions: () => dispatch(requestAllQuestions())
+        requestAllQuestions: () => dispatch(requestAllQuestions()),
+        updateQuestion: (question) => dispatch(updateQuestion(question))
     }
 }
 

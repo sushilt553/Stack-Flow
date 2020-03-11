@@ -13,6 +13,7 @@ class QuestionsIndex extends React.Component{
             <QuestionIndexItem
                 key={question.id}
                 question={question}
+                updateQuestion={this.props.updateQuestion}
                 // deleteQuestion={this.props.deleteQuestion}
                 // sessionId={this.props.sessionId}
               />

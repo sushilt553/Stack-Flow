@@ -21,9 +21,13 @@ const QuestionIndexItem = (props) => {
                 <li className="ans-count">{ansCount}</li>
                 answers
                 </label>
+                <label>
+                <li className="views-count">{props.question.views}</li>
+                views
+                </label>
             </section>
             <section className="body-tags">
-                <Link className="question-body" to={`/questions/${props.question.id}`} >{props.question.title}</Link>
+                <Link onClick={() => props.updateQuestion({id: props.question.id, views: props.question.views + 1, tags: props.question.tags })} className="question-body" to={`/questions/${props.question.id}`} >{props.question.title}</Link>
                 <ul className="all-show-tags">
                     <div className="show-tags">
                         {tags}

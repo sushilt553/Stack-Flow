@@ -3,8 +3,9 @@ import {Link} from 'react-router-dom';
 
 const BlogPage = (props) => {
     let topQuestions;
+    // debugger
     if (props.topQuestions){
-        topQuestions = props.topQuestions.map((topQuestion, idx) => <Link key={idx} to={`/questions/${topQuestion.id}`}><li>{topQuestion.title}</li></Link>)
+        topQuestions = props.topQuestions.map((topQuestion, idx) => <Link key={idx} to={`/questions/${topQuestion.id}`}><li onClick={() => props.updateQuestion({id: topQuestion.id, views: topQuestion.views + 1, tags: topQuestion.tags})}>{topQuestion.title}</li></Link>)
     }else{
         return null;
     }

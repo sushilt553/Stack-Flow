@@ -18,7 +18,7 @@ end
 
 def find_top_questions
     Question
-    .select(:id, :title, 'COUNT(question_id) as answers_count')
+    .select(:id, :title, :views,'COUNT(question_id) as answers_count')
     .joins(:answers)
     .group(:id)
     .order('answers_count DESC')
@@ -28,7 +28,7 @@ end
 json.questions do
     @questions.each do |question|
         json.set!(question.id) do 
-            json.extract! question, :id, :title, :body, :author_id, :answer_ids
+            json.extract! question, :id, :title, :body, :author_id, :views, :answer_ids
             json.set!('tags', joiner(question))
             json.set!('full_tags', question.tags)
             json.set!('author_name', find_author_name(question))

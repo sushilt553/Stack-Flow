@@ -4,7 +4,7 @@ import { postQuestion, clearQuestionErrors } from '../../actions/question_stack_
 
 const mapStateToProps = state => {
     return {
-        question: { title: '', body: '', tags: '' },
+        question: { title: '', body: '', tags: '', views: 0 },
         formType: 'Ask a public question',
         buttonType: 'Review your question',
         errors: state.errors.question
