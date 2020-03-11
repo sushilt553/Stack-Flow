@@ -14,7 +14,7 @@ class HomePage extends React.Component{
                     <section className="front-page">
                         <div className="block-top">
                             <h2>Top Questions</h2>
-                            <button className="ask-button"><Link to='/questions/new'>Ask Question</Link></button>
+                            <Link to='/questions/new'><button className="ask-button">Ask Question</button></Link>
                         </div>
                         <div className="question-index"><QuestionIndexContainer /></div>
                     </section>

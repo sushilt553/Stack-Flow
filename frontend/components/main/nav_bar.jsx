@@ -26,12 +26,13 @@ class NavBar extends React.Component {
                 </nav>
 
                 <ul className='sign-page'>
-                    <li><button className='log-link'>
-                    <Link to="/login">Log In</Link>
-                    </button></li>
-                    <li><button className='sign-link'>
-                    <Link to="/signup">Sign Up</Link>
-                    </button></li>
+                    <li><Link to="/login">
+                        <button className='log-link'>Log In</button></Link>
+                    </li>
+                    <li><Link to="/signup">
+                        <button className='sign-link'>Sign Up</button>
+                        </Link>
+                    </li>
                 </ul>   
             </header>
         ) : (
