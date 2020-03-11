@@ -66,7 +66,7 @@ class QuestionForm extends React.Component {
                                     type="text"
                                     value={this.state.tags}
                                     onChange={this.update('tags')}
-                                    placeholder='e.g.(ruby rails jquery'
+                                    placeholder='e.g.(ruby rails jquery)'
                                     />
                             </label>
                         </section>
