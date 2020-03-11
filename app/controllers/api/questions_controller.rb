@@ -24,7 +24,7 @@ class Api::QuestionsController < ApplicationController
     end
 
     def update
-        @question = current_user.questions.find_by(id: params[:id])
+        @question = Question.find_by(id: params[:id])
 
         if @question.update_attributes(question_params)
             old_tags = @question.taggings
