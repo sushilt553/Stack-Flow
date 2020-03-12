@@ -5,6 +5,23 @@
     background-color: #ffffff;
 }
 
+.tags-header {
+    margin: 10px;
+}
+
+.tag-head {
+    font-size: 24px;
+}
+
+.tag-p {
+    width: 680px;
+    line-height: 25px;
+}
+
+.tags-header>p {
+    margin: 10px 0;
+}
+
 .all-tags-index .tags-list-index {
     display: flex;
     flex-wrap: wrap;
