@@ -6,6 +6,8 @@ Q&A platform for professional developers, inspired by Stack Overflow
 
 [Live Site](https://stack-flow.herokuapp.com/)
 
+![](https://github.com/sushilt553/Stack-Flow/blob/master/app/assets/images/stack-flow-homepage.png)
+
 ### Features
 
 * Questions and Answers - You can ask or answer coding questions in a community of users.
