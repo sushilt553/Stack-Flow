@@ -1,4 +1,5 @@
 import React from 'react';
+import Footer from '../main/footer';
 
 class SplashPage extends React.Component{
 
