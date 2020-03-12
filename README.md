@@ -42,3 +42,12 @@ class Api::SearchController < ApplicationController
     end
 end
 ```
+
+```ruby
+def self.create_tags(tags_arr, question)
+    tags_arr.each do |tag|
+        new_tag = Tag.find_by(name: tag) || Tag.create!(name: tag)
+        Tagging.create(question_id: question.id, tag_id: new_tag.id)
+    end
+end
+```
