@@ -1,24 +1,22 @@
-# README
+# Stack Flow
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Overview
 
-Things you may want to cover:
+Q&A platform for professional developers, inspired by Stack Overflow
 
-* Ruby version
+[Live Site](https://stack-flow.herokuapp.com/)
 
-* System dependencies
+### Features
 
-* Configuration
+* Questions and Answers - You can ask or answer coding questions in a community of users.
+* Votes - You can upvote helpful questions/answers written by other users. Also, you can downvote questions/answers that need more improvement.
+* Search questions by tags - You can search questions by tag name.
+* Tags - You can see list of all tags and click on to view related questions/answers.
 
-* Database creation
+### Technologies
 
-* Database initialization
+* Stack Flow was built using React, Redux, and Ruby on Rails on top of a Postgresql database.
 
-* How to run the test suite
+### Code highlights
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
-
-* ...
