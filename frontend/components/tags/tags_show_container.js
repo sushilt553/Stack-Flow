@@ -7,7 +7,7 @@ const mapStateToProps = (state, ownProps) => {
     const id = ownProps.match.params.tagId;
     // debugger
     let tagObj = state.entities.tagQuestions[id];
-    let question = undefined;
+    let question = [];
     let tag = state.entities.allTags[id]
     let tagName = ""
     if (tag) {

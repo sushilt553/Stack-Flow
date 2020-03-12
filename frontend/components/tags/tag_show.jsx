@@ -33,6 +33,17 @@ class TagShow extends React.Component{
             />
         )
 
+        let topic;
+        let notFound;
+
+        if (questions == false) {
+            topic = <h2>404 Not Found</h2>;
+            notFound = <div className='not-found'> Questions related to [{this.props.tagName}] not found</div>;
+        } else {
+            topic = <h2>Tagged [{this.props.tagName}] questions found</h2>
+            notFound = null;
+        }
+
 {/* < Link key = { question.id } to = {`/questions/${question.id}`}> <li>{question.title}</li></Link > */}
         return (
             <div className="main-home-page">
@@ -40,10 +51,11 @@ class TagShow extends React.Component{
                 <section className="index-container">
                     <section className="front-page">
                         <div className="block-top">
-                            <h2>Questions tagged [{this.props.tagName}]</h2>
+                            {topic}
                             <button className="ask-button"><Link to='/questions/new'>Ask Question</Link></button>
                         </div>
                         <ul className="main-questions-list">
+                            {notFound}
                             {questions}
                         </ul>
                     </section>
