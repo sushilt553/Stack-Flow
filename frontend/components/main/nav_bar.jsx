@@ -15,6 +15,7 @@ class NavBar extends React.Component {
     keyPressed(e){
         if (e.key === "Enter"){
             this.props.history.push(`/search/${this.state.tags}`)
+            this.setState({tags: ""})
         }
     }
 
