@@ -10,10 +10,15 @@ Q&A platform for professional developers, inspired by Stack Overflow
 
 ### Features
 
-* Questions and Answers - Users can ask or answer coding questions in a community of users.
-* Votes - Users can upvote helpful questions/answers written by other users. Also, users can downvote questions/answers that need more improvement.
-* Search questions by tags - Users can search questions by tag name.
-* Tags - Users can see list of all tags and click on to view related questions/answers.
+* Post Questions and Answers
+  * Users can ask or answer coding questions in a community of users.
+* Votes
+  * Users can upvote helpful questions/answers posted by other users.
+  * Users can downvote questions/answers that need additional improvement.
+* Search questions by tags
+  * Users can search questions by tag name.
+* Tags 
+  * Users can see list of all tags and select to view filtered questions/answers.
 
 ### Technologies
 
@@ -21,7 +26,7 @@ Q&A platform for professional developers, inspired by Stack Overflow
 
 ### Code highlights
 
-Users can search questions based on multiple tag names. This feature is implemented by using active record query on the backend to search for questions based on tag names received. Below is the code that is used to search questions.
+Users can search questions based on multiple tag names. This feature is implemented by using active record query on the backend that allows to search for questions based on tag names selected. Below is the code that is used to search questions.
 ```ruby
 class Api::SearchController < ApplicationController
 
@@ -43,7 +48,7 @@ class Api::SearchController < ApplicationController
 end
 ```
 
-Users can vote on questions and answers. This feature is implemented using polymorphic association, storing boolean value on status column in the database. Code below either update a voter's existing vote if the status value is different from the stored status value in the database or create a new vote if a voter is a new user.
+Users can vote on questions and answers. This feature is implemented by using polymorphic association. If the status value (boolean) is different from the stored status value (boolean) in the database, the code below updates a voter's existing vote. If a voter is a new user, the code creates a new vote.
 
 ```ruby
 class Api::VotesController < ApplicationController
@@ -72,7 +77,7 @@ class Api::VotesController < ApplicationController
 end
 ```
 
-Code below prevents from creating/storing multiple tags of same name.
+The code below prevents from creating/storing multiple tags of same name.
 ```ruby
 def self.create_tags(tags_arr, question)
     tags_arr.each do |tag|
