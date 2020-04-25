@@ -9,8 +9,10 @@ const Footer = () => {
                 <p className='footer-head'>STACK FLOW</p>
             </Link>
             <ul className='footer-list'>
-                <a href="https://github.com/sushilt553/Stack-Flow"><li>Github</li></a>
-                <a href="https://www.linkedin.com/in/sushil-thapa-546800159/"><li>LinkedIn</li></a>
+                <a href="http://tsushil.com/" target="_blank"><li>Portfolio</li></a>
+                <a href="https://github.com/sushilt553/Stack-Flow" target="_blank"><li>Github</li></a>
+                <a href="https://www.linkedin.com/in/sushil-thapa-546800159/" target="_blank"><li>LinkedIn</li></a>
+                <a href="https://angel.co/u/sushil-thapa-2" target="_blank"><li>Angellist</li></a>
             </ul>
         </section>
     )
