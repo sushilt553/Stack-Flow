@@ -53,53 +53,75 @@ class QuestionDetailsShow extends React.Component{
         // const tagsArr = this.props.question.tags.split(" ")
         // const tags = tagsArr.map((tag, idx) => <li className="tag-list" key={idx} >{tag}</li>);
 
-        return(
-            <section className="main-show-page">
-                <Sidebar />
-                <section className='show-sub-section'>
-                    <div className='title-top'>
-                        <h2 className="question-title">{this.props.question.title}</h2>
-                        <button className="ask-button question-list"><Link to='/questions/new'>Ask Question</Link></button>
+        return (
+          <section className="main-show-page">
+            <Sidebar />
+            <section className="show-sub-section">
+              <div className="title-top">
+                <h2 className="question-title">{this.props.question.title}</h2>
+                <Link to="/questions/new">
+                  <button className="ask-button question-list">
+                    Ask Question
+                  </button>
+                </Link>
+              </div>
+              <div className="question-show-page">
+                <div className="min-question-show-page">
+                  <div>
+                    <div className="votes-icons-container">
+                      <div className="votes-icons">
+                        <button
+                          onClick={() =>
+                            this.props.questionVote({
+                              votable_type: "Question",
+                              votable_id: this.props.question.id,
+                              status: true,
+                            })
+                          }
+                        >
+                          <i className="fas fa-caret-up"></i>
+                        </button>
+                        <p>{this.props.question.votes_count}</p>
+                        <button
+                          onClick={() =>
+                            this.props.questionVote({
+                              votable_type: "Question",
+                              votable_id: this.props.question.id,
+                              status: false,
+                            })
+                          }
+                        >
+                          <i className="fas fa-caret-down"></i>
+                        </button>
+                      </div>
+                      <p className="question-body">
+                        {this.props.question.body}
+                      </p>
                     </div>
-                    <div className="question-show-page">
-                        <div className="min-question-show-page">
-                            <div>
-                                <div className="votes-icons-container">
-                                    <div className="votes-icons">
-                                        <button onClick={() => this.props.questionVote({votable_type: 'Question', votable_id: this.props.question.id, status: true})}><i className="fas fa-caret-up"></i></button>
-                                        <p>{this.props.question.votes_count}</p>
-                                        <button onClick={() => this.props.questionVote({ votable_type: 'Question', votable_id: this.props.question.id, status: false })}><i className="fas fa-caret-down"></i></button>
-                                    </div>
-                                    <p className="question-body">{this.props.question.body}</p>
-                                </div>
-                                <div>
+                    <div>
+                      {buttons}
 
-                                    {buttons}
-
-                                    <ul className="all-tags">
-                                        <div className="tags-in">
-                                            {tags}
-                                        </div>
-                                        <p className="posted-by">Posted by {this.props.question.author_name}</p>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <div className="body-div">
-                                
-                                <div className="answer-count">{answersCount}</div>
-                                <br/>
-                                <ul className="answer-list">
-                                    {answersList}
-                                </ul>
-                                <AnswerFormContainer questionId={this.props.question.id} />
-                            </div>
-                        </div>
-                        <BlogPageContainer/>
+                      <ul className="all-tags">
+                        <div className="tags-in">{tags}</div>
+                        <p className="posted-by">
+                          Posted by {this.props.question.author_name}
+                        </p>
+                      </ul>
                     </div>
-                </section>
+                  </div>
+
+                  <div className="body-div">
+                    <div className="answer-count">{answersCount}</div>
+                    <br />
+                    <ul className="answer-list">{answersList}</ul>
+                    <AnswerFormContainer questionId={this.props.question.id} />
+                  </div>
+                </div>
+                <BlogPageContainer />
+              </div>
             </section>
-        )
+          </section>
+        );
     }
 }
 
