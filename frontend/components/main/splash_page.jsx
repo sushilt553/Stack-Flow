@@ -17,6 +17,7 @@ class SplashPage extends React.Component{
                         <p className="dev-bus-2">For Businesses</p>
                     </div>
                 </div>
+                <Footer />
             </div>
         )
     }

@@ -9,6 +9,7 @@ const BlogPage = (props) => {
     }else{
         return null;
     }
+
     return (
         <section className="side-page">
             <article className="blog-post">

@@ -95,7 +95,7 @@ class QuestionDetailsShow extends React.Component{
                                 <AnswerFormContainer questionId={this.props.question.id} />
                             </div>
                         </div>
-                        <BlogPageContainer />
+                        <BlogPageContainer/>
                     </div>
                 </section>
             </section>

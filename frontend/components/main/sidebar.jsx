@@ -8,8 +8,8 @@ const Sidebar = () => {
             <p>PUBLIC</p>
             <ul className="tag-lists">
                 <li><NavLink to={`/tags`}>Tags</NavLink></li>
-                <li>Users</li>
-                <li>Jobs</li>
+                {/* <li>Users</li>
+                <li>Jobs</li> */}
             </ul>
         </div>
     )

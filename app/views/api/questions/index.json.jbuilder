@@ -22,7 +22,7 @@ def find_top_questions
     .joins(:answers)
     .group(:id)
     .order('answers_count DESC')
-    .limit(5)
+    .limit(10)
 end
 
 json.questions do
